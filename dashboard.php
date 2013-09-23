@@ -34,7 +34,7 @@
 
 
 
-<!--Now let us upload the holy Tweet of the Lord.--> 
+
 
 
 <form action="" method="post" enctype="application/x-www-form-urlencoded" id="send-tweet">
@@ -79,7 +79,7 @@
     <div class="tweet">
       <div class="tweet-left">
 
-        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+        <p>Nullam ultricies ultrices pharetra. Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.</p>
       </div><!-- .tweet-left -->
       
       <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
@@ -91,7 +91,7 @@
     <div class="tweet">
       <div class="tweet-left">
 
-        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+        <p>Sed dictum, est ac viverra porttitor, est leo lacinia massa.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
       <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
@@ -108,11 +108,11 @@
 
     <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
       <div class="tweet-left">
-        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+        <h3><a href="#">Thomas Durran</a> @TD</h3>
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -120,10 +120,10 @@
     <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
       <div class="tweet-left">
         <h3><a href="#">Daisuke Murase</a> @typester</h3>
-        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+        <p>Phiaculis nulla id purus convallis interdum. Sed aliquet consequat dui convallis venenatis. Nam sit amet arcu et tortor sodales semper.</p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -131,11 +131,11 @@
 
     <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
       <div class="tweet-left">
-        <h3><a href="#">Daisuke Murase</a> @typester</h3>
-        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+        <h3><a href="#">David Hollander</a> @typester</h3>
+        <p>Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.</p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date"> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -160,6 +160,19 @@ tab 3
 // <![CDATA[
 
 $(document).ready(function() {
+
+// Tweet input instructions, remove on focus
+
+	  $("#tweet-msg").attr("value", "Now let us upload the holy tweet of the Lord.").css('color', '#808080');
+	  var text1 = "Now let us upload the holy tweet of the Lord.";
+	  
+	  $("#tweet-msg").focus(function() {
+			  if($(this).attr("value") == text1) $(this).attr("value", "").css('color', '#000');
+	  });
+	  
+	  $("#tweet-msg").blur(function() {
+			  if($(this).attr("value") == "") $(this).attr("value", text1).css('color', '#808080');
+	  });
 
 // These show and hide tabs
 

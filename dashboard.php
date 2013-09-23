@@ -95,14 +95,50 @@
     </div><!-- .tweet --> 
 
 
-
-
-    
-    
   </div><!-- .main-content -->
    
 </div><!-- .wrapper -->
 
 
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+// <![CDATA[
+
+$(document).ready(function() {
+
+// These show and hide tabs
+
+// Hide things on load
+      $('#tab-2').hide();
+      $('#tab-3').hide();
+
+// show/hide on pagination link click
+    $('.tweets-tab').click(function () {
+      $('.tab-content').hide(); 											 
+      $('#tab-one').show();
+    });
+    $('.following-tab').click(function () {
+      $('.tab-content').hide(); 											 
+      $('#tab-two').show();
+    });
+    $('.followers-tab').click(function () {
+      $('.tab-content').hide(); 											 
+      $('#tab-three').show();
+    });
+
+
+// Change selected tab 
+    $('.tabs').click(function () {
+      $('.tabs').removeClass("current");
+      $(this).addClass("current");
+//	  return false;
+    });
+
+
+}); // close doc ready
+
+// ]]>
+</script>
 </body>
 </html>

@@ -73,6 +73,18 @@
    
 </div><!-- .wrapper -->
 
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 
+<script type="text/javascript">
+// <![CDATA[
+
+$(document).ready(function() {
+	//alert('hello');
+
+
+}); // close doc ready
+
+// ]]>
+</script>
 </body>
 </html>

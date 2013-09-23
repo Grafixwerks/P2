@@ -72,6 +72,32 @@
    
 </div><!-- .wrapper -->
 
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="js/additional-methods.min.js"></script>
+<script type="text/javascript">
+// <![CDATA[
 
+$(document).ready(function() {
+	//alert('hello');
+
+		// form instructions, remove on focus
+        $('#email').attr('autocomplete','off');
+        
+        $("#email").attr("value", "email");
+        var text1 = "email";
+        
+        $("#email").focus(function() {
+                if($(this).attr("value") == text1) $(this).attr("value", "");
+        });
+        
+        $("#email").blur(function() {
+                if($(this).attr("value") == "") $(this).attr("value", text1);
+        });
+
+}); // close doc ready
+
+// ]]>
+</script>
 </body>
 </html>

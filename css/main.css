@@ -2,15 +2,13 @@
 /* 
    CSS Document
    CSCI E-15 | Andrew Pearson | P 2
-
 */
-
 body {
 	background: #679ED7;
 	margin: 0px;
 	padding: 0px;
-	position: relative;
 	z-index: 1;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .wrapper { /* container for site */
 	width: 950px;
@@ -30,11 +28,38 @@ body {
 	margin-top: 10px;
 	margin-left: 75px;
 }
+h1, h2, h3 {
+	font-family: 'Bree Serif', 'Trebuchet MS';
+	font-weight: normal;
+}
+a {
+	outline:none;
+}
+.clr-flt { /* clear floated blocks for layout */
+	font-size: 1px;
+	line-height: 1px;
+	clear: both;
+}
+.btn { /* buttons */
+	background: linear-gradient(to bottom, #f25b24 0%,#dd3e16 13%,#b2240e 89%,#99270d 100%); /* Old browsers */
+	color: #DEDBAE;
+	border: none;
+	font-weight: normal;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	padding: 0px;
+	display: block;
+}
+.main-content p a {
+	color: #FF931E;
+	text-decoration: none;
+}
 h1 {
 	color: #6E1D6B;
-	font: 24px 'Bree Serif', "Trebuchet MS", serif;
 	margin-top: 0px;
 	margin-bottom: 20px;
+	font-size: 24px;
 }
 .main-content {
 	float: right;
@@ -70,7 +95,7 @@ ul.nav li {
 ul.nav li a {
 	color: #FFF;
 }
-#home {
+#home { /* home icon on nav */
 	display: block;
 	height: 16px;
 	width: 17px;
@@ -82,7 +107,7 @@ ul.nav li a {
 	opacity:0.9;
 	filter:alpha(opacity=90); /*For IE8 and earlier */
 }
-#acct {
+#acct { /* account setting icon on nav */
 	display: block;
 	height: 16px;
 	width: 30px;
@@ -94,33 +119,106 @@ ul.nav li a {
 	filter:alpha(opacity=90); /*For IE8 and earlier */
 }
 ul.nav ul.dropdown { /* dropdown navigation links */
-	/*background: #6E1D6B;*/
-	background: #4A0047;
 	margin: 0px;
 	padding: 3px 0px 0px;
 	list-style: none;
-	z-index: 200;
+	z-index: 50;
 	position: absolute;
 	left: -999em;
-	opacity:0.5;
-	filter:alpha(opacity=50); /*For IE8 and earlier */
+	background: url(../images/global/bg-black.png);
+	border-right: 1px solid #6E1D6B;
+	border-bottom: 1px solid #6E1D6B;
+	border-left: 1px solid #6E1D6B;
 }
 ul.nav li:hover ul.dropdown {
 	left: auto;
 }
 ul.nav ul.dropdown li {
 	float: none;
+	background: url(../images/global/bg-black.png);
+}
+ul.nav ul.dropdown li:hover {
+	background: #6E1D6B;
 }
 .main-nav .nav li .dropdown li {
-	padding: 5px 10px;
+	
 }
 .main-nav .nav li .dropdown li a {
 	text-decoration: none;
 	display: block;
 	font: bold 12px Arial, Helvetica, sans-serif;
+	padding: 5px 10px;
 }
 .main-nav .nav li .dropdown li a:hover {
-	color: #999;
+	color: #FF931E;
 }
-
-
+/* Tweets */
+.tweet {
+	border-bottom: 1px dotted #000;
+	margin-top: 20px;
+	padding-bottom: 5px;
+}
+.tweet .user-th {
+	float: left;
+	border: 1px solid #6E1D6B;
+	margin-right: 10px;
+	margin-top: 3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.tweet h3 {
+	margin-top: 0px;
+	margin-bottom: 5px;
+	font-size: 15px;
+	line-height: 15px;
+}
+.tweet p {
+	font-size: 14px;
+	line-height: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.tweet h3 a {
+	color: #000;
+	text-decoration: none;
+}
+.tweet h3 a:hover {
+	color: #E17600;
+	text-decoration: underline;
+}
+.tweet .tweet-left {
+	float: left;
+	width: 475px;
+}
+.tweet-right {
+	float: right;
+	width: 80px;
+}
+.tweet-right .date {
+	text-align: right;
+	display: block;
+	float: right;
+	width: 75px;
+	font-size: 12px;
+}
+.btn-follow {
+	background: #6E1D6B;
+	display: block;
+	float: right;
+	height: 20px;
+	width: 65px;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.btn-follow:hover {
+	color: #FF931E;
+}

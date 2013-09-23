@@ -15,21 +15,62 @@
       <ul class="dropdown">
         <li><a href="">View profile</a></li>
         <li><a href="">Account dashboard</a></li>
-        <li><a href="">Log out  </a></li>
+        <li><a href="">Log out </a></li>
       </ul><!-- .dropdown --> 
-
+      
+      
     </li>
     <li><a href="" title="Home" id="home">Home</a></li>
   </ul><!-- .nav --> 
+  
 </div><!-- .main-nav -->
 
 
 <div class="wrapper"> <a href="/" class="logo">Holy Tweet: from your keyboard to God’s ear!</a>
   <div class="main-content">
     <h1>Tweets</h1>
-  </div><!-- .main-content --> 
-  
-  
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+      </div><!-- .tweet-left -->
+      
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <br class="clr-flt">
+    </div><!-- .tweet --> 
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+      </div><!-- .tweet-left -->
+      
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <br class="clr-flt">
+    </div><!-- .tweet --> 
+
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+      </div><!-- .tweet-left -->
+      
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <br class="clr-flt">
+    </div><!-- .tweet --> 
+
+
+
+
+    
+    
+  </div><!-- .main-content -->
+   
 </div><!-- .wrapper -->
 
 

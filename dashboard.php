@@ -82,7 +82,7 @@
         <p>Nullam ultricies ultrices pharetra. Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.</p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">14 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -94,7 +94,7 @@
         <p>Sed dictum, est ac viverra porttitor, est leo lacinia massa.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">10 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -145,7 +145,36 @@
 
 
 <div class="tab-content" id="tab-three">
-tab 3
+    <h2>Followers</h2>
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">Thomas Durran</a> @TD</h3>
+        <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
+      </div><!-- .tweet-left -->
+      
+      <div class="tweet-right"> <a href="#" class="btn-small follow">follow</a> </div><!-- .tweet-right --> 
+      <br class="clr-flt">
+    </div><!-- .tweet --> 
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+        <p>Phiaculis nulla id purus convallis interdum. Sed aliquet consequat dui convallis venenatis. Nam sit amet arcu et tortor sodales semper.</p>
+      </div><!-- .tweet-left -->
+      
+      <div class="tweet-right"> <a href="#" class="btn-small follow">follow</a> </div><!-- .tweet-right --> 
+      <br class="clr-flt">
+    </div><!-- .tweet --> 
+
+
+
+    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+      <div class="tweet-left">
+        <h3><a href="#">David Hollander</a> @typester</h3>
+        <p>Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. Pellentesque tincidunt velit a
 </div><!-- #tab-3 -->
 <!-- style="display:none"-->
 

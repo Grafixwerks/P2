@@ -112,7 +112,7 @@
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -123,7 +123,7 @@
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
@@ -135,7 +135,7 @@
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small follow">unfollow</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 

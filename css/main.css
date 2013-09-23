@@ -41,15 +41,27 @@ a {
 	clear: both;
 }
 .btn { /* buttons */
-	background: linear-gradient(to bottom, #f25b24 0%,#dd3e16 13%,#b2240e 89%,#99270d 100%); /* Old browsers */
-	color: #DEDBAE;
+	color: #fff;
 	border: none;
-	font-weight: normal;
+	font-weight: bold;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	padding: 0px;
+	padding: 5px;
 	display: block;
+	cursor: pointer;
+	background: rgb(110,29,107); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(110,29,107,1) 0%, rgba(69,18,66,1) 24%, rgba(89,24,87,1) 65%, rgba(128,34,124,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(110,29,107,1)), color-stop(24%,rgba(69,18,66,1)), color-stop(65%,rgba(89,24,87,1)), color-stop(100%,rgba(128,34,124,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(110,29,107,1) 0%,rgba(69,18,66,1) 24%,rgba(89,24,87,1) 65%,rgba(128,34,124,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(110,29,107,1) 0%,rgba(69,18,66,1) 24%,rgba(89,24,87,1) 65%,rgba(128,34,124,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(110,29,107,1) 0%,rgba(69,18,66,1) 24%,rgba(89,24,87,1) 65%,rgba(128,34,124,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(110,29,107,1) 0%,rgba(69,18,66,1) 24%,rgba(89,24,87,1) 65%,rgba(128,34,124,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e1d6b', endColorstr='#80227c',GradientType=0 ); /* IE6-9 */
+	margin: 0px;
+}
+.btn:hover {
+	color: #E17600;
 }
 .main-content p a {
 	color: #FF931E;
@@ -219,4 +231,57 @@ ul.nav ul.dropdown li:hover {
 }
 .btn-follow:hover {
 	color: #FF931E;
+}
+/* log in form */
+.welcome {
+	width: 325px;
+	padding: 30px 25px 20px;
+	margin-right: 300px;
+	/*margin-top: 300px;*/
+	border: 1px solid #6E1D6B;
+	background: url(../images/global/bg-black.png) repeat;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	float: right;
+	margin-top: 100px;
+}
+fieldset {
+	margin: 0px;
+	padding: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+legend {
+	font-size: 1px;
+	text-indent: -9999px;
+	margin: 0px;
+	padding: 0px;
+}
+#sign-in {
+	margin: 10px 0px 0px;
+	float: right;
+}
+.welcome-label {
+	position: absolute;
+	left: -9999px;
+}
+.txt {
+	width: 100%;
+	margin-bottom: 10px;
+	border: 1px solid #6E1D6B;
+	padding:3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.welcome p {
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #6E1D6B;
 }

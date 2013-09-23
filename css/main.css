@@ -261,7 +261,6 @@ legend {
 	padding: 0px;
 }
 #sign-in {
-	margin: 10px 0px 0px;
 	float: right;
 }
 .welcome-label {
@@ -269,7 +268,7 @@ legend {
 	left: -9999px;
 }
 .txt {
-	width: 100%;
+	width: 319px;
 	margin-bottom: 10px;
 	border: 1px solid #6E1D6B;
 	padding:3px;
@@ -284,4 +283,14 @@ legend {
 	line-height: 20px;
 	font-weight: bold;
 	color: #6E1D6B;
+}
+.welcome a {
+	color: #FF931E;
+	text-decoration: none;
+}
+.welcome a:hover {
+	color: #FF931E;
+	text-decoration: underline;
+}#join {
+	float: right;
 }

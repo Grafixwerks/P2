@@ -63,6 +63,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e1d6b', end
 .btn:hover {
 	color: #E17600;
 }
+.btn-small {
+	background: #6E1D6B;
+	display: block;
+	height: 20px;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.btn-small:hover {
+	color: #FF931E;
+}
 .main-content p a {
 	color: #FF931E;
 	text-decoration: none;
@@ -71,7 +88,13 @@ h1 {
 	color: #6E1D6B;
 	margin-top: 0px;
 	margin-bottom: 20px;
-	font-size: 24px;
+	font-size: 26px;
+}
+h2 {
+	color: #6E1D6B;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
 }
 .main-content {
 	float: right;
@@ -212,26 +235,12 @@ ul.nav ul.dropdown li:hover {
 	width: 75px;
 	font-size: 12px;
 }
-.btn-follow {
-	background: #6E1D6B;
-	display: block;
+.follow {
 	float: right;
-	height: 20px;
-	width: 65px;
 	margin-top: 10px;
-	font-weight: bold;
-	color: #FFF;
-	text-decoration: none;
-	text-align: center;
-	font-size: 12px;
-	line-height: 20px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	width: 65px;
 }
-.btn-follow:hover {
-	color: #FF931E;
-}
+
 /* log in form */
 .welcome {
 	width: 325px;

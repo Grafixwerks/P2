@@ -6,6 +6,13 @@
 <title>Holy Tweet</title>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/main.css">
+<style type="text/css">
+.edit {
+	width: 40px;
+	float: right;
+	margin-top: 5px;
+}
+</style>
 </head>
 
 <body>
@@ -56,36 +63,40 @@
 </ul><!-- .profile-nav -->
 
 
-    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+<h2>Your tweets</h2>
+
+
+    <div class="tweet">
       <div class="tweet-left">
-        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+
+        
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
 
-    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+    <div class="tweet">
       <div class="tweet-left">
-        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 
 
 
-    <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+    <div class="tweet">
       <div class="tweet-left">
-        <h3><a href="#">Daisuke Murase</a> @typester</h3>
+
         <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
       </div><!-- .tweet-left -->
       
-      <div class="tweet-right"><span class="date">18 Sep</span> <a href="#" class="btn-follow">unfollow</a> </div><!-- .tweet-right --> 
+      <div class="tweet-right"><span class="date">18 Sep</span>  <a href="#" class="btn-small edit">edit</a> </div><!-- .tweet-right --> 
       <br class="clr-flt">
     </div><!-- .tweet --> 
 

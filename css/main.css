@@ -99,24 +99,22 @@ ul.nav li a {
 	display: block;
 	height: 16px;
 	width: 17px;
-	background: url(../images/global/nav.png) no-repeat;
+	background: url(../images/global/nav.png) no-repeat 0px 0px;
 	text-indent: -9999px;
 	margin-right: 15px;
 }
 #home:hover {
-	opacity:0.9;
-	filter:alpha(opacity=90); /*For IE8 and earlier */
+	background: url(../images/global/nav.png) no-repeat 0px -19px;
 }
 #acct { /* account setting icon on nav */
 	display: block;
 	height: 16px;
 	width: 30px;
-	background: url(../images/global/nav.png) no-repeat -20px;
+	background: url(../images/global/nav.png) no-repeat -20px -2px;
 	text-indent: -9999px;
 }
 #acct:hover {
-	opacity:0.9;
-	filter:alpha(opacity=90); /*For IE8 and earlier */
+	background: url(../images/global/nav.png) no-repeat -20px -21px;
 }
 ul.nav ul.dropdown { /* dropdown navigation links */
 	margin: 0px;

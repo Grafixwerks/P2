@@ -47,7 +47,7 @@ a {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
-	padding: 5px;
+	padding: 7px;
 	display: block;
 	cursor: pointer;
 	background: rgb(110,29,107); /* Old browsers */
@@ -254,7 +254,7 @@ fieldset {
 	border-bottom-style: none;
 	border-left-style: none;
 }
-legend {
+.welcome legend {
 	font-size: 1px;
 	text-indent: -9999px;
 	margin: 0px;
@@ -291,6 +291,63 @@ legend {
 .welcome a:hover {
 	color: #FF931E;
 	text-decoration: underline;
-}#join {
+}
+#join {
 	float: right;
+}
+/* Tweet form */
+#btn-tweet {
+	float: right;
+}
+#send-tweet fieldset legend {
+	font-size: 16px;
+	font-family: 'Bree Serif', 'Trebuchet MS';
+	font-weight: normal;
+	text-align: left;
+	color: #6E1D6B;
+	margin-bottom: 5px;
+}
+.tweet-label {
+	position: absolute;
+	left: -9999px;
+}
+.tweet-txt {
+	width: 540px;
+	margin-bottom: 10px;
+	border: 1px solid #6E1D6B;
+	padding:7px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	float: left;
+}
+.profile-nav {
+	list-style: none;
+	padding: 0px;
+	height: 20px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+	font-weight: bold;
+}
+.profile-nav li {
+	float: left;
+	margin-right: 15px;
+	border-right: 1px solid #000;
+	padding-right: 15px;
+}
+.profile-nav a {
+	color: #FF6600;
+	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0px 0px 3px #000;
+}
+.profile-nav a:hover {
+	text-decoration: underline;
+}
+.count {
+	display: inline-block;
+	border: 1px solid #6E1D6B;
+	background: #FFF;
+	padding-right: 2px;
+	padding-left: 2px;
 }

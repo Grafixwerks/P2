@@ -6,13 +6,7 @@
 <title>Holy Tweet</title>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<style type="text/css">
-.edit {
-	width: 40px;
-	float: right;
-	margin-top: 5px;
-}
-</style>
+
 </head>
 
 <body>
@@ -59,7 +53,7 @@
 <ul class="profile-nav">
 <li><span class="count">3</span> <a href="">Tweets</a></li>
 <li><span class="count">8</span> <a href="">Following</a></li>
-<li><span class="count">6</span> <a href="">Followers</a></li>
+<li class="last"><span class="count">6</span> <a href="">Followers</a></li>
 </ul><!-- .profile-nav -->
 
 

@@ -360,3 +360,11 @@ fieldset {
 	padding-right: 2px;
 	padding-left: 2px;
 }
+.edit {
+	width: 40px;
+	float: right;
+	margin-top: 5px;
+}
+.profile-nav .last {
+	border-style: none;
+}

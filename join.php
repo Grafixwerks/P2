@@ -35,7 +35,7 @@
 
 <form action="" method="post" enctype="application/x-www-form-urlencoded" id="">
   <fieldset>
-    <legend>Sign in</legend>
+    <legend>Join</legend>
     <div class="text-group">
       <label for="first-name" class="welcome-label">First Name:</label>
       <input type="text" name="first-name" id="first-name"  class="txt" maxlength="20" />

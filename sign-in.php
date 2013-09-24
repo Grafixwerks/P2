@@ -30,7 +30,7 @@
 
 
 <div class="welcome">
-<p>Talk directly to God in 140 characters! Holy Tweet uses the miracle of our advanced ethereal net protocol to deliver your 140 character message directly to God.</p>
+<p class="intro">Talk directly to God in 140 characters! Holy Tweet uses the miracle of our advanced ethereal net protocol to deliver your 140 character message directly to God.</p>
 
 
 <form action="" method="post" enctype="application/x-www-form-urlencoded" id="">

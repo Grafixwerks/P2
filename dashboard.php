@@ -32,7 +32,7 @@
     <h1>Welcome brother Ned</h1>
     <form action="" method="post" enctype="application/x-www-form-urlencoded" id="send-tweet">
       <fieldset>
-        <legend>Create your tweet...</legend>
+        <legend>Now let us upload the holy tweet of the Lord.</legend>
         <label for="tweet-msg" class="tweet-label">Message:</label>
         <input type="text" name="tweet-msg" id="tweet-msg"  class="tweet-txt" maxlength="140" />
         <input type="submit" name="submit" value="Tweet" id="btn-tweet" class="btn" />
@@ -189,8 +189,8 @@ $(document).ready(function() {
 
 // Tweet input instructions, remove on focus
 
-	  $("#tweet-msg").attr("value", "Now let us upload the holy tweet of the Lord.").css('color', '#808080');
-	  var text1 = "Now let us upload the holy tweet of the Lord.";
+	  $("#tweet-msg").attr("value", "Create your tweet, 140 characters max.").css('color', '#808080');
+	  var text1 = "Create your tweet, 140 characters max.";
 	  
 	  $("#tweet-msg").focus(function() {
 			  if($(this).attr("value") == text1) $(this).attr("value", "").css('color', '#000');

@@ -412,3 +412,37 @@ fieldset {
 .show {
 	display: block;
 }
+/* user profile */
+.user-pic {
+	float: left;
+	border: 1px solid #6E1D6B;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.profile {
+	float: right;
+	width: 470px;
+}
+.profile h3 {
+	font-size: 16px;
+	text-align: right;
+	float: left;
+	width: 60px;
+	clear: left;
+	margin-top: 0px;
+	line-height: 16px;
+	height: 16px;
+	margin-bottom: 10px;
+}
+.profile p {
+	float: right;
+	width: 400px;
+	clear: right;
+	font-size: 14px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.profile p.bio-text {
+	line-height: 20px;
+}

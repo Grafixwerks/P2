@@ -210,17 +210,17 @@ $(document).ready(function() {
     $('.tweets-tab').click(function () {
       $('.tab-content').hide(); 											 
       $('#tab-one').show();
-	  (this).preventDefault();
+	  return false;
     });
     $('.following-tab').click(function () {
       $('.tab-content').hide(); 											 
       $('#tab-two').show();
-	  (this).preventDefault();
+	  return false;
     });
     $('.followers-tab').click(function () {
       $('.tab-content').hide(); 											 
       $('#tab-three').show();
-	  (this).preventDefault();
+	  return false;
     });
 
 }); // close doc ready

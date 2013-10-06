@@ -41,6 +41,7 @@
 $route['default_controller'] = "site";
 $route['404_override'] = '';
 
+$route['profile'] = "profile";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

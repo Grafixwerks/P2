@@ -1,5 +1,5 @@
 <div class="main-content">
-<a href="/profile">PROFILE</a> 
+ 
 
 <!--<pre>
 <?php print_r($results)  ?>

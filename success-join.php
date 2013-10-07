@@ -6,25 +6,7 @@
 <title>Holy Tweet</title>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<style type="text/css">
-.success-label {
-	text-align: right;
-	display: block;
-	float: left;
-	width: 190px;
-	margin-right: 5px;
-	font-size: 14px;
-	font-weight: bold;
-	padding-top: 3px;
-}
-.main-content p {
-	font-size: 14px;
-}
-#update {
-	float: right;
-	margin-right: 111px;
-}
-</style>
+
 </head>
 
 <body>

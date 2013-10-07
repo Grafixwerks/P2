@@ -196,6 +196,9 @@ ul.nav ul.dropdown li:hover {
 	margin-top: 20px;
 	padding-bottom: 5px;
 }
+.tweet:last-child {
+	border-bottom: none;
+}
 .tweet .user-th {
 	float: left;
 	border: 1px solid #6E1D6B;

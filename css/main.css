@@ -106,7 +106,8 @@ h2 {
 	margin-right: 80px;
 	padding: 30px 75px 20px;
 	border: 1px solid #6E1D6B;
-	background: url(../images/global/bg-black.png) repeat;
+	background-color:rgba(0,0,0, 0.07);
+	/*background: url(../images/global/bg-black.png) repeat;*/
 	-webkit-border-radius: 20px;
 	-moz-border-radius: 20px;
 	border-radius: 20px;
@@ -161,7 +162,8 @@ ul.nav ul.dropdown { /* dropdown navigation links */
 	z-index: 50;
 	position: absolute;
 	left: -999em;
-	background: url(../images/global/bg-black.png);
+	background-color:rgba(0,0,0, 0.2);
+	/*background: url(../images/global/bg-black.png);*/
 	border-right: 1px solid #6E1D6B;
 	border-bottom: 1px solid #6E1D6B;
 	border-left: 1px solid #6E1D6B;
@@ -171,7 +173,7 @@ ul.nav li:hover ul.dropdown {
 }
 ul.nav ul.dropdown li {
 	float: none;
-	background: url(../images/global/bg-black.png);
+	/*background: url(../images/global/bg-black.png);*/
 }
 ul.nav ul.dropdown li:hover {
 	background: #6E1D6B;

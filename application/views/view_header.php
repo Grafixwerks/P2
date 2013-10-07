@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <title>Holy Tweet <?php echo $title?></title>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/main.css">
+<link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/main.css">
 </head>
 
 <body>

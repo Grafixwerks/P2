@@ -15,10 +15,16 @@ class Sign_in extends CI_Controller {
 	{
 		$this->load->library('form_validation') ;
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim|xss_clean|callback_validate_credentials') ;
-		
+		// need salt  
+		$salt = 'jQ-U?1B{Wh!oq$E41=)XMVk{@.13qM' ;
 		$this->form_validation->set_rules('password', 'Password', 'required|md5|trim') ;
 		
 		if ($this->form_validation->run() == TRUE) {
+			$data = array(
+				'email' => $this->input->post('email'),
+				'is_logged_in' => 1
+			);
+			$this->session->set_userdata($data);
 			redirect('site/index') ;
 		} else {
 			$data['title'] = 'Sign in' ;

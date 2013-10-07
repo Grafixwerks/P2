@@ -2,8 +2,13 @@
  
 
 <!--<pre>
-<?php print_r($results)  ?>
+<?php print_r($results) ; ?>
 </pre>-->
+
+<!--<pre>
+<?php print_r($this->session->all_userdata()) ; ?>
+</pre>-->
+
 	<?php foreach ($results as $tweet): ?> 
         <div class="tweet"> <img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
         <div class="tweet-left">

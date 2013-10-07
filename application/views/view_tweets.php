@@ -5,7 +5,7 @@
 <?php print_r($results)  ?>
 </pre>-->
 	<?php foreach ($results as $tweet): ?> 
-        <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+        <div class="tweet"> <img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
         <div class="tweet-left">
         <h3><a href="/user/<?php echo $tweet['user_id'] ?>">f_name l_name</a> @typester</h3>
         <p><?php echo $tweet['tweet'] ?></p>

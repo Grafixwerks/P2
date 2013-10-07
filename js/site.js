@@ -1,47 +1,20 @@
 $(document).ready(function() {
-	  // first-name input instructions, remove on focus
-	  
-	  $("#first-name").attr("value", "First name").css('color', '#808080');
-	  var text1 = "First name";
-	  
-	  $("#first-name").focus(function() {
-			  if($(this).attr("value") == text1) $(this).attr("value", "").css('color', '#000');
-	  });
-	  
-	  $("#first-name").blur(function() {
-			  if($(this).attr("value") == "") $(this).attr("value", text1).css('color', '#808080');
-	  });
 
-
-	  // last-name input instructions, remove on focus
-	  
-	  $("#last-name").attr("value", "Last name").css('color', '#808080');
-	  var text2 = "Last name";
-	  
-	  $("#last-name").focus(function() {
-			  if($(this).attr("value") == text2) $(this).attr("value", "").css('color', '#000');
+	  // Text input instructions, remove on focus, uses title attribute
+	  $('.form-txt').each(function() {
+	  var text = $(this).attr("title");
+	  if ($(this).val() == ''){
+	  $(this).attr("value", text).css('color', '#808080');
+	  $(this).focus(function() {
+			  if($(this).attr("value") == text) $(this).attr("value", "").css('color', '#000');
 	  });
-	  
-	  $("#last-name").blur(function() {
-			  if($(this).attr("value") == "") $(this).attr("value", text2).css('color', '#808080');
+	  $(this).blur(function() {
+			  if($(this).attr("value") == "") $(this).attr("value", text).css('color', '#808080');
 	  });
+};
+});
 
-	  // Sign in form, email input instructions, remove on focus
-	  
-	  $("#email").attr("value", "email").css('color', '#808080');
-	  var text1 = "email";
-	  
-	  $("#email").focus(function() {
-			  if($(this).attr("value") == text1) $(this).attr("value", "").css('color', '#000');
-	  });
-	  
-	  $("#email").blur(function() {
-			  if($(this).attr("value") == "") $(this).attr("value", text1).css('color', '#808080');
-	  });
-
-
-
-	  // Sign in form, password input instructions, remove on focus, uses background image
+	  // Password input instructions, remove on focus, uses background image
 	  
 	  $("#password").focus(function() {
 		  $(this).addClass("active");

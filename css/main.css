@@ -134,6 +134,20 @@ ul.nav li {
 ul.nav li a {
 	color: #FFF;
 }
+ul.nav li a.sign-in {
+	color: #FFF;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	line-height: 18px;
+	display: block;
+	height: 16px;
+}
+ul.nav li a.sign-in:hover {
+	color: #FF931E;
+}
+
+
 #home { /* home icon on nav */
 	display: block;
 	height: 16px;

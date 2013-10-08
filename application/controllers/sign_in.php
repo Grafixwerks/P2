@@ -10,6 +10,7 @@ class Sign_in extends CI_Controller {
 		$this->load->view('view_sign_in', $data) ;
 		$this->load->view('view_footer', $data) ;
 	}
+	
 	// validation
 	public function sign_in_validation()
 	{
@@ -34,7 +35,6 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
-
 	// validate_credentials
 	public function validate_credentials()
 	{
@@ -48,8 +48,15 @@ class Sign_in extends CI_Controller {
 		}
 	}
 
+	// Log out
+	public function sign_out()
+	{
+		$this->session->sess_destroy() ;
+		redirect(sign_in/index) ;
+	}
+
  
-}
+}  // Close class Sign_in
 
 
 

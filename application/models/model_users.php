@@ -42,6 +42,40 @@ class Model_users extends CI_Model {
 
 
 
+	public function is_code_valid($confirm_code) {
+		$this->db->where('confirm_code' , $confirm_code ) ;
+		$query = $this->db->get('temp_users') ;
+		if ( $query->num_rows() == 1 ) {
+			return true ;
+		} else {
+			return false ;
+		}
+	}
+
+
+	public function add_user($confirm_code) {
+		$this->db->where('confirm_code' , $confirm_code ) ;
+		$temp_user = $this->db->get('temp_users') ;
+		if ( $temp_user ) {
+			$row = $temp_user->row() ;
+			
+			$data = array(
+				'f_name' => $row->f_name ,
+				'l_name' => $row->l_name ,
+				'email' => $row->email ,
+				'pw' => $row->pw ,
+				
+			) ;
+			
+			$did_add_user = $this->db->insert('users' , $data) ;
+		} if ($did_add_user) {
+			$this->db->where('confirm_code' , $confirm_code) ;
+			$this->db->delete('temp_users') ;
+			return $data['email'] ;
+		} return false ;
+	}
+
+
 } // close class Model_users
 
 

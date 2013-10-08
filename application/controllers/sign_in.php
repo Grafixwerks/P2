@@ -123,6 +123,30 @@ class Sign_in extends CI_Controller {
 	}
 
 
+	// Validate confirm_code
+	public function register_user($confirm_code)
+	{
+		$this->load->model('model_users') ;
+		
+		if ($this->model_users->is_code_valid($confirm_code)) {
+			if ($newemail = $this->model_users->add_user($confirm_code) ) {
+				$data = array(
+					'email' => $newemail ,
+					'is_logged_in' => 1
+				) ;
+				$this->session->set_userdata($data) ;
+				redirect('site') ;
+			} else echo 'failed to add user' ;
+		} else {
+			echo 'bogus' ;
+		}
+		
+	}
+
+
+
+
+
 }  // Close class Sign_in
 
 

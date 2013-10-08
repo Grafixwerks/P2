@@ -39,13 +39,13 @@
     <div class="text-group">
       <label for="first-name" class="welcome-label">First Name:</label>
       <input type="text" name="first-name" id="first-name"  class="txt" maxlength="20" />
-    </div><!-- Close class text-gruop -->
+    </div><!-- .text-group -->
     
     
     <div class="text-group">
       <label for="last-name" class="welcome-label">Last Name:</label>
       <input type="text" name="last-name" id="last-name"  class="txt" maxlength="30" />
-    </div><!-- Close class text-gruop -->
+    </div><!-- .text-group -->
     
     
     <div class="text-group">

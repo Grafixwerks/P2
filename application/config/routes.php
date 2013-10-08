@@ -44,6 +44,8 @@ $route['404_override'] = '';
 $route['profile'] = "profile";
 $route['sign_in'] = "sign_in";
 $route['log_out'] = "sign_in/sign_out";
+$route['join'] = "sign_in/join";
+$route['join-success'] = "sign_in/join_success";
 
 
 /* End of file routes.php */

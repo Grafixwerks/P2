@@ -2,9 +2,8 @@
 
 class Sign_in extends CI_Controller {
 
-	// Sign in form
-	public function index()
-	{
+	// Sign in form page
+	public function index() {
 		$this->load->helper('form');
 		$data['title'] = 'Sign in' ;
 		$this->load->view('view_header', $data) ;
@@ -12,29 +11,16 @@ class Sign_in extends CI_Controller {
 		$this->load->view('view_footer') ;
 	}
 
-	// Join form
-	public function join()
-	{
-		$this->load->helper('form');
-		$data['title'] = 'Join' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_join', $data) ;
-		$this->load->view('view_footer') ;
-	}
-
-	// User sign in validation
-	public function sign_in_validation()
-	{
+	// Sign in form validation
+	public function sign_in_validation() {
 		$this->load->library('form_validation') ;
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim|xss_clean|callback_validate_credentials') ;
 		// need salt  
 		// $salt = 'jQ-U?1B{Wh!oq$E41=)XMVk{@.13qM' ;
 		$this->form_validation->set_rules('password', 'Password', 'required|md5|trim') ;
-		
+		// if passes validation go to home page
 		if ($this->form_validation->run() == TRUE) {
-
 			redirect('site') ;
-			//$data['user_info'] = $query ;
 		} else {
 			$data['title'] = 'Sign in' ;
 			$this->load->view('view_header', $data) ;
@@ -43,10 +29,36 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
-
-	// join validation
-	public function join_validation()
+	// Check sign in email/pw in users table
+	public function validate_credentials()
 	{
+		$this->load->model('model_users');
+		// Call function to check email/pw
+		if ( $this->model_users->can_log_in() ) {
+			return true ;
+		} else {
+			$this->form_validation->set_message('validate_credentials','Incorrect username/password.') ;
+			return false ;
+		}
+	}
+
+	// Log out: destroy session and redirect to home page
+	public function sign_out() {
+		$this->session->sess_destroy() ;
+		redirect(sign_in/index) ;
+	}
+
+	// Join form page
+	public function join() {
+		$this->load->helper('form');
+		$data['title'] = 'Join' ;
+		$this->load->view('view_header', $data) ;
+		$this->load->view('view_join', $data) ;
+		$this->load->view('view_footer') ;
+	}
+
+	// join form validation, add to users, send email with confirmation code
+	public function join_validation() {
 		$this->load->library('form_validation') ;
 		$this->form_validation->set_rules('f_name', 'First name', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
 		$this->form_validation->set_rules('l_name', 'Last name', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
@@ -57,9 +69,8 @@ class Sign_in extends CI_Controller {
 		$this->form_validation->set_message('is_unique', 'That email address already has an account.' ) ;
 		
 		if ($this->form_validation->run() == TRUE) {
-			// generate a random key
+			// generate a random key for email link
 			$confirm_code = md5(uniqid()) ;
-
 			
 			$this->load->library('email', array('mailtype'=>'html')) ;
 			$this->load->model('model_users') ;
@@ -67,13 +78,11 @@ class Sign_in extends CI_Controller {
 			$this->email->from('andy@grafixwerks.com', 'Andy Pearson') ;
 			$this->email->to($this->input->post('email')) ;
 			$this->email->subject('Confirm your Hly Tweet account.') ;
-			
 			$message = '<p>Thank you for joining Holy Tweet!</p>' ;
-			$message = '<p><a href="'.base_url().'/confirm'.$confirm_code.'">Click here</a> to confirm your account.</p>' ;
-			
+			$message .= '<p><a href="'.base_url().'/confirm'.$confirm_code.'">Click here</a> to confirm your account.</p>' ;
 			$this->email->message($message) ;
 			
-			// send user an email
+			// send user an email if temp_user added
 			if ($this->model_users->add_temp_user($confirm_code) ) {
 				if ($this->email->send() ) {
 					echo 'msg sent' ;
@@ -91,47 +100,31 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
-	// Join success
-	public function join_success()
-	{
+	// Join success page, Join form successfully submitted, user in temp_users
+	public function join_success() {
 		$data['title'] = 'Join Success' ;
 		$this->load->view('view_header', $data) ;
 		$this->load->view('view_join_success', $data) ;
 		$this->load->view('view_footer') ;
 	}
 
-	// validate_credentials
-	public function validate_credentials()
-	{
-		$this->load->model('model_users');
-		
-		if ( $this->model_users->can_log_in() ) {
-			return true ;
-		} else {
-			$this->form_validation->set_message('validate_credentials','Incorrect username/password.') ;
-			return false ;
-		}
-	}
-
-	// Log out
-	public function sign_out()
-	{
-		$this->session->sess_destroy() ;
-		redirect(sign_in/index) ;
-	}
-
-
-	// Validate confirm_code
-	public function register_user($confirm_code)
-	{
+	// Check confirm_code from email against temp_users, add to users, send to user to 2nd form
+	public function register_user($confirm_code) {
 		$this->load->model('model_users') ;
-		
+		// check if confirm_code is in temp_users
 		if ($this->model_users->is_code_valid($confirm_code)) {
-			if ($newemail = $this->model_users->add_user($confirm_code) ) {
+			// pull data out of temp_users, put into users and delete from temp_users
+			if ($user_data = $this->model_users->add_user($confirm_code) ) {
+			//if ($newemail = $this->model_users->add_user($confirm_code) ) {
 				$data = array(
-					'email' => $newemail ,
+					//'email' => $newemail ,
+					'f_name' => $user_data[f_name] ,
+					'l_name' => $user_data[l_name] ,
+					'email' => $user_data[email] ,
+					'user_id' => $user_data[user_id] ,
 					'is_logged_in' => 1
 				) ;
+				// set session logged in
 				$this->session->set_userdata($data) ;
 				redirect('sign_in/confirm_registration') ;
 			} else echo 'failed to add user' ;
@@ -141,11 +134,8 @@ class Sign_in extends CI_Controller {
 		
 	}
 
-
-
-	// Email confirm Success page
-	public function confirm_registration()
-	{
+	// Email confirmation code success page, has form to comlete profile
+	public function confirm_registration() {
 		$this->load->helper('form');
 		$data['title'] = 'Registration confirmed' ;
 		$this->load->view('view_header', $data) ;
@@ -153,10 +143,8 @@ class Sign_in extends CI_Controller {
 		$this->load->view('view_footer') ;
 	}
 
-
-	// after confirm registration, user data form validation
-	public function data_validation()
-	{
+	// Validate data from confirmation code success page form and insert into users table
+	public function data_validation() {
 		$this->load->library('form_validation') ;
 		$this->form_validation->set_rules('city', 'City', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
 		$this->form_validation->set_rules('state', 'State', 'required|trim|xss_clean|alpha|exact_length[2]') ;

@@ -6,8 +6,6 @@ class Model_users extends CI_Model {
 		$this->db->where('email' , $this->input->post('email')) ;
 		$this->db->where('pw' , md5($this->input->post('password'))) ;
 		$query = $this->db->get('users') ;
-		//$query2 = $this->db->get_where('users', array('email' => $this->input->post('email')));
-		//$user_id = $query2->user_id() ;
 		
 		if ( $query->num_rows() == 1 ) {
 			$row = $query->row() ;
@@ -65,25 +63,45 @@ class Model_users extends CI_Model {
 		}
 	}
 
-	
+	// Check if confirm code matches temp_users
 	public function add_user($confirm_code) {
 		$this->db->where('confirm_code' , $confirm_code ) ;
 		$temp_user = $this->db->get('temp_users') ;
 		if ( $temp_user ) {
+			// pull out row from query and put into array 
 			$row = $temp_user->row() ;
-			
 			$data = array(
 				'f_name' => $row->f_name ,
 				'l_name' => $row->l_name ,
 				'email' => $row->email ,
 				'pw' => $row->pw 
 			) ;
-			
+			// insert temp_users data into users
 			$did_add_user = $this->db->insert('users' , $data) ;
+			
+			
+			
+			
+			
+			
+		// if new user added to users, delete data from temp_users
 		} if ($did_add_user) {
 			$this->db->where('confirm_code' , $confirm_code) ;
 			$this->db->delete('temp_users') ;
-			return $data['email'] ;
+			// pull out user id
+			$this->db->where('email' , $data['email'] ) ;
+			$query = $this->db->get('users') ;
+			$row = $query->row() ;
+			$data = array(
+				'f_name' => $row->f_name ,
+				'l_name' => $row->l_name ,
+				'email' => $row->email ,
+				'user_id' => $row->user_id 
+			) ;
+			//return email for session
+			//return $data['email'] ;
+			return $data ;
+			
 		} return false ;
 	}
 

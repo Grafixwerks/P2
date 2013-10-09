@@ -87,8 +87,6 @@ class Model_users extends CI_Model {
 				'email' => $row->email ,
 				'user_id' => $row->user_id 
 			) ;
-			//return email for session
-			//return $data['email'] ;
 			return $data ;
 			
 		} return false ;

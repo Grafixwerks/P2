@@ -23,19 +23,19 @@
 
     <div class="text-group">
       <label for="email" class="welcome-label">E-Mail:</label>
-      <input type="text" name="email" value="<?php echo set_value('email'); ?>" id="email" maxlength="40" class="txt form-txt" title="email" /><!--autocomplete="off"-->
+      <input type="text" name="email" value="<?php echo set_value('email'); ?>" id="email" maxlength="100" class="txt form-txt" title="email" /><!--autocomplete="off"-->
     </div><!-- .text-group -->
     
     
     <div class="text-group">
       <label for="password" class="welcome-label">Password: </label>
-      <input type="password" name="password" value="" id="password" maxlength="40" class="txt inactive" autocomplete="off" />
+      <input type="password" name="password" value="" id="password" maxlength="100" class="txt inactive" autocomplete="off" />
     </div><!-- .text-group -->
 
 
     <div class="text-group">
       <label for="c_password" class="welcome-label">Confirm Password: </label>
-      <input type="password" name="c_password" value="" id="c_password" maxlength="40" class="txt inactive" autocomplete="off" />
+      <input type="password" name="c_password" value="" id="c_password" maxlength="100" class="txt inactive" autocomplete="off" />
     </div><!-- .text-group -->
 
 

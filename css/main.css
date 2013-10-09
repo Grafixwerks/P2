@@ -106,6 +106,7 @@ h2 {
 	margin-right: 80px;
 	padding: 30px 75px 20px;
 	border: 1px solid #6E1D6B;
+	background-color:rgba(255,255,255, 0.3);
 	/*background-color:rgba(0,0,0, 0.07);*/
 	/*background: url(../images/global/bg-black.png) repeat;*/
 	-webkit-border-radius: 20px;
@@ -298,6 +299,9 @@ fieldset {
 	margin: 0px;
 	padding: 0px;
 }
+.success .text-group  {
+	clear:both;
+}
 #sign-in {
 	float: right;
 }
@@ -314,9 +318,27 @@ fieldset {
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+.dropdown {
+	width: 165px;
+	margin-bottom: 10px;
+	border: 1px solid #6E1D6B;
+	padding:1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #FFF;
+	float: left;
+}
+.dropdown select {
+	width: 160px;
+	margin: 0px;
+	border: none;
+	padding:0px 0px 1px;
+	background-color: transparent;
+}
 .bio {
-	width: 319px;
-	height:100px;
+	width: 324px;
+	height:150px;
 	margin-bottom: 10px;
 	border: 1px solid #6E1D6B;
 	padding:3px;

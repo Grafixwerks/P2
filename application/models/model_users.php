@@ -10,11 +10,24 @@ class Model_users extends CI_Model {
 		//$user_id = $query2->user_id() ;
 		
 		if ( $query->num_rows() == 1 ) {
+			$row = $query->row() ;
 			$data = array(
-			'email' => $this->input->post('email') ,
-			'is_logged_in' => 1 ,
-			//'user_id' => $user_id
-			);
+				'f_name'		=> $row->f_name ,
+				'l_name'		=> $row->l_name ,
+				'email'			=> $row->email ,
+				'user_id'		=> $row->user_id ,
+				'bio'			=> $row->bio ,
+				'pic'			=> $row->pic ,
+				'city'			=> $row->city ,
+				'state'			=> $row->state ,
+				'website'		=> $row->website ,
+				'is_logged_in'	=> 1 
+				) ;
+//			$data = array(
+//				'email' => $this->input->post('email') ,
+//				'is_logged_in' => 1 ,
+//				//'user_id' => $user_id
+//			);
 			$this->session->set_userdata($data);
 			return true ;
 		} else {
@@ -41,7 +54,7 @@ class Model_users extends CI_Model {
 	}
 
 
-
+	// check confirmation code from email against temp_users
 	public function is_code_valid($confirm_code) {
 		$this->db->where('confirm_code' , $confirm_code ) ;
 		$query = $this->db->get('temp_users') ;
@@ -52,7 +65,7 @@ class Model_users extends CI_Model {
 		}
 	}
 
-
+	
 	public function add_user($confirm_code) {
 		$this->db->where('confirm_code' , $confirm_code ) ;
 		$temp_user = $this->db->get('temp_users') ;
@@ -63,8 +76,7 @@ class Model_users extends CI_Model {
 				'f_name' => $row->f_name ,
 				'l_name' => $row->l_name ,
 				'email' => $row->email ,
-				'pw' => $row->pw ,
-				
+				'pw' => $row->pw 
 			) ;
 			
 			$did_add_user = $this->db->insert('users' , $data) ;
@@ -74,6 +86,12 @@ class Model_users extends CI_Model {
 			return $data['email'] ;
 		} return false ;
 	}
+
+
+
+	public function add_user_info() {
+	}
+
 
 
 } // close class Model_users

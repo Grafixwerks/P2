@@ -46,8 +46,8 @@ $route['sign_in'] = "sign_in";
 $route['log_out'] = "sign_in/sign_out";
 $route['join'] = "sign_in/join";
 $route['join-success'] = "sign_in/join_success";
-$route['confirm_code/(:any)'] = "sign_in/register_user/$1";
-
+$route['confirm/(:any)'] = "sign_in/register_user/$1";
+//$route['test'] = "sign_in/confirm_registration";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

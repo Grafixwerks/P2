@@ -21,11 +21,6 @@ class Model_users extends CI_Model {
 				'website'		=> $row->website ,
 				'is_logged_in'	=> 1 
 				) ;
-//			$data = array(
-//				'email' => $this->input->post('email') ,
-//				'is_logged_in' => 1 ,
-//				//'user_id' => $user_id
-//			);
 			$this->session->set_userdata($data);
 			return true ;
 		} else {
@@ -50,7 +45,6 @@ class Model_users extends CI_Model {
 			return false ;
 		}
 	}
-
 
 	// check confirmation code from email against temp_users
 	public function is_code_valid($confirm_code) {
@@ -79,11 +73,6 @@ class Model_users extends CI_Model {
 			// insert temp_users data into users
 			$did_add_user = $this->db->insert('users' , $data) ;
 			
-			
-			
-			
-			
-			
 		// if new user added to users, delete data from temp_users
 		} if ($did_add_user) {
 			$this->db->where('confirm_code' , $confirm_code) ;
@@ -105,7 +94,6 @@ class Model_users extends CI_Model {
 		} return false ;
 	}
 
-
 	// take data from 2nd form add to users
 	public function add_user_info() {
 		$user_id = $this->session->userdata('user_id') ;
@@ -124,9 +112,7 @@ class Model_users extends CI_Model {
 		} else {
 			return false ;
 		}
-
 	}
-
 
 
 } // close class Model_users

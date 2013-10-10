@@ -114,9 +114,7 @@ class Sign_in extends CI_Controller {
 		if ($this->model_users->is_code_valid($confirm_code)) {
 			// pull data out of temp_users, put into users and delete from temp_users
 			if ($user_data = $this->model_users->add_user($confirm_code) ) {
-			//if ($newemail = $this->model_users->add_user($confirm_code) ) {
 				$data = array(
-					//'email' => $newemail ,
 					'f_name' => $user_data[f_name] ,
 					'l_name' => $user_data[l_name] ,
 					'email' => $user_data[email] ,
@@ -164,7 +162,30 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
+	// Validate data profile edit
+	public function update_user_validation() {
+		$this->load->library('form_validation') ;
+		$this->form_validation->set_rules('f_name', 'First name', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
+		$this->form_validation->set_rules('l_name', 'Last name', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|trim|xss_clean|max_length[100]') ;
+		$this->form_validation->set_rules('city', 'City', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
+		$this->form_validation->set_rules('state', 'State', 'required|trim|xss_clean|alpha|exact_length[2]') ;
+		$this->form_validation->set_rules('website', 'Website', 'trim|xss_clean|prep_url|strip_tags|max_length[50]') ;
+		$this->form_validation->set_rules('bio', 'Bio', 'required|trim|xss_clean|strip_tags|max_length[1000]') ;
+		$this->form_validation->set_message('alpha', 'Please choose a state.' ) ;
 
+		if ($this->form_validation->run() == TRUE) {
+			$this->load->model('model_users');
+			$this->model_users->update_user() ;
+			redirect('/profile') ;
+		} else {
+			$this->load->helper('form');
+			$data['title'] = 'Registration confirmed' ;
+			$this->load->view('view_header', $data) ;
+			$this->load->view('view_confirm_registration', $data) ;
+			$this->load->view('view_footer') ;
+			}
+	}
 
 	// Update profile page
 	public function update_profile() {

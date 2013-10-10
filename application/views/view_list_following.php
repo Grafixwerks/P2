@@ -10,27 +10,24 @@
 
 ?>
     <ul class="horizontal-nav">
-      <li>Latest Tweets</li>
+      <li><a href="/" >Latest Tweets</a></li>
       <li><a href="<?php echo site_url(); ?>users" >List Users</a></li>
-      <li class="last"><a href="/following" >Following</a></li>
+      <li class="last">Following</li>
     </ul>
     <!-- .horizontal-nav -->
 
-<?php foreach ($results as $tweet): ?> 
+<?php foreach ($results as $user): ?> 
 
 	<div class="tweet">
 
 		<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
-			<h3><a href="/user/<?php echo $tweet->user_id ; ?>"><?php echo $tweet->f_name ; ?> <?php echo $tweet->l_name ; ?></a> </h3>
-			<p><?php echo $tweet->tweet // $tweet['tweet'] ?></p>
+			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
+			<p><?php echo $user->bio ?></p>
 		</div><!-- .tweet-left -->
 
-		<div class="tweet-right">
-			<span class="date"><?php echo date( "F j, Y", strtotime( $tweet->date ) ) ; // $tweet['date'] ?></span>
-			<a href="#" class="btn-small follow">unfollow</a> 
-		</div><!-- .tweet-right --> 
+
 
 		<br class="clr-flt">
 

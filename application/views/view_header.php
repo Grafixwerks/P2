@@ -1,3 +1,23 @@
+<?php
+// drop down menu for user account, li with nested ul
+$logged_in_menu = '<li><a href="" title="Account" id="acct">Account</a>' ;
+$logged_in_menu .= '<ul class="dropdown">' ;
+$logged_in_menu .= '<li><a href="/profile">View profile</a></li>' ;
+$logged_in_menu .= '<li><a href="/dashboard">Account dashboard</a></li>' ;
+$logged_in_menu .= '<li><a href="/log-out">Log out</a></li>' ;
+$logged_in_menu .= '</ul>' ;
+$logged_in_menu .= '</li>' ;
+
+// user sign in link
+$sign_in_link = '<li><a href="/sign-in" class="sign-in">Sign in</a></li>' ;
+
+// check if user is signed in and set main nav link
+if ($this->session->userdata('is_logged_in')) {
+	$nav_link = $logged_in_menu ;
+	} else {
+	$nav_link = $sign_in_link ;
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -9,26 +29,7 @@
 </head>
 
 <body>
-<?php
-// drop down menu for user account, li with nested ul
-$logged_in_menu = '<li><a href="" title="Account" id="acct">Account</a>' ;
-$logged_in_menu .= '<ul class="dropdown">' ;
-$logged_in_menu .= '<li><a href="/profile">View profile</a></li>' ;
-$logged_in_menu .= '<li><a href="/dashboard">Account dashboard</a></li>' ;
-$logged_in_menu .= '<li><a href="/log_out">Log out</a></li>' ;
-$logged_in_menu .= '</ul>' ;
-$logged_in_menu .= '</li>' ;
 
-// user sign in link
-$sign_in_link = '<li><a href="/sign_in" class="sign-in">Sign in</a></li>' ;
-
-// check if user is signed in and set main nav link
-if ($this->session->userdata('is_logged_in')) {
-	$nav_link = $logged_in_menu ;
-	} else {
-	$nav_link = $sign_in_link ;
-	}
-?>
 <div class="main-nav">
   <ul class="nav">
     <?php echo $nav_link ; ?>

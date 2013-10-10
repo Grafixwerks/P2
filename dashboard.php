@@ -39,12 +39,12 @@
       </fieldset>
       <br class="clr-flt">
     </form>
-    <ul class="profile-nav">
+    <ul class="horizontal-nav">
       <li><span class="count">3</span> <a href="#" class="tweets-tab">Tweets</a></li>
       <li><span class="count">8</span> <a href="#" class="following-tab">Following</a></li>
       <li class="last"><span class="count">6</span> <a href="#" class="followers-tab">Followers</a></li>
     </ul>
-    <!-- .profile-nav -->
+    <!-- .horizontal-nav -->
     
     <div class="tab-content" id="tab-one">
       <h2>Your tweets</h2>

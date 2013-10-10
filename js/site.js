@@ -38,6 +38,10 @@ $(document).ready(function() {
 	  $("#tweet-msg").blur(function() {
 			  if($(this).attr("value") == "") $(this).attr("value", text1).css('color', '#808080');
 	  });
+	  
+	  $("#btn-tweet").click(function() {
+			  if($('#tweet-msg').attr("value") == text1) $('#tweet-msg').attr("value", "");
+	  });
 
 // These show and hide tabs
 

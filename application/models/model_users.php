@@ -112,7 +112,56 @@ class Model_users extends CI_Model {
 		}
 	}
 
+	// take data profile update form add to users
+	public function update_user() {
+		$user_id = $this->session->userdata('user_id') ;
+		$data = array (
+			'f_name' 	=> $this->input->post('f_name') ,
+			'l_name' 	=> $this->input->post('l_name') ,
+			'email' 	=> $this->input->post('email') ,
+			'bio'		=> $this->input->post('bio') ,
+			//'pic'		=> $this->input->post('pic') ,
+			'city'		=> $this->input->post('city') ,
+			'state'		=> $this->input->post('state') ,
+			'website'	=> $this->input->post('website') 
+		) ;
+		$this->db->where('user_id' , $user_id ) ;
+		$query = $this->db->update('users' , $data) ;
+		if ($query) {
+			$this->session->set_userdata($data);
+			return true ;
+		} else {
+			return false ;
+		}
+	}
+
+//	function get_user($user_id) {
+//		
+//		$query = $this->db->get_where('users', array('user_id' => $user_id) );
+//		return $query->result();
+//		}
+
+
+	function get_user($user_id) {
+		$this->db->from('users');
+		$this->db->where('users.user_id', $user_id); 
+		$this->db->join('tweets', 'tweets.user_id = users.user_id');
+		$query =  $this->db->get() ;
+		return $query->result();
+		}
+
+
+
+	function get_all_user() {
+		$this->db->from('users');
+//		$this->db->where('users.user_id', $user_id); 
+//		$this->db->join('tweets', 'tweets.user_id = users.user_id');
+		$query =  $this->db->get() ;
+		return $query->result();
+		}
+
 
 } // close class Model_users
+// array('user_id' => '$user_id')
 
-
+// $query = $this->db->get_where('Workorder', array('WOrder'=>$woID), 1, 0);

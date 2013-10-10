@@ -15,10 +15,8 @@ class Model_tweets extends CI_Model {
 		}
 	}
 
+	// Get all tweets and user info
 	function get_tweets() {
-		// single row
-		//$query = $this->db->get('users', 1);
-		// foreach
 		$this->db->select('*');
 		$this->db->from('tweets');
 		$this->db->order_by("date", "desc");
@@ -26,9 +24,16 @@ class Model_tweets extends CI_Model {
 		$query =  $this->db->get() ;
 		return $query->result();
 		}
-
-
 }
+
+//	function get_tweets() {
+//		// single row
+//		//$query = $this->db->get('users', 1);
+//		return $query->result();
+//		}
+
+
+
 //		$this->db->where('email' , $this->input->post('email')) ;
 //		$this->db->where('pw' , md5($this->input->post('password'))) ;
 //		$query = $this->db->get('users') ;

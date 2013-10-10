@@ -70,7 +70,7 @@ $attributes = array('class' => 'success', 'id' => 'success');
 
 
 
-<?php echo form_open('sign_in/data_validation', $attributes) ; ?>
+<?php echo form_open('sign_in/update_user_validation', $attributes) ; ?>
    
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 

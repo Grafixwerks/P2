@@ -1,24 +1,45 @@
+<?php
+  if ($this->session->userdata('city') != NULL) {
+	  $location = '<h3>location:</h3>' ;
+	  $location .= "<p>{$this->session->userdata('city')}, {$this->session->userdata('state')}</p>" ;
+  } else $location = '' ;
+  
+  if ($this->session->userdata('website') != NULL) {
+	  $website = '<h3>website:</h3>' ;
+	  $website .= "<p><a href=\"{$this->session->userdata('website')}\">{$this->session->userdata('website')}</a></p>" ;
+  } else $website = '' ;
+  
+  if ($this->session->userdata('bio') != NULL) {
+	  $bio = '<h3>bio:</h3>' ;
+	  $bio .= "<p class=\"bio-text\">{$this->session->userdata('bio')}</p>" ;
+  } else $bio = '' ;
+  
+  if ($this->session->userdata('pic') != NULL) {
+	  $pic = "{$this->session->userdata('pic')}" ;
+	  $alt = "{$this->session->userdata('f_name')} {$this->session->userdata('l_name')} profile picture" ;
+  } else { $pic = 'unk-user' ;
+	  $alt = "" ;
+  } 
+?>
 <div class="main-content">
 
-<?php
-// Show single user profile
-//  echo '<pre>' ;
-//  print_r($results) ;
-//  echo '</pre>' ;
-?>
-
-<h1><?php echo "{$results[0]->f_name} {$results[0]->l_name }" ; ?></h1>
-<img src="images/<?php echo $results[0]->pic ; ?>.png" width="130" height="129" alt="" class="user-pic">
-
-<div class="profile">
-    <h3>location:</h3>
-    <p><?php echo "{$results[0]->city}, {$results[0]->state}" ; ?></p>
-    <h3>website:</h3>
-    <p><a href="<?php echo $results[0]->website ; ?>"><?php echo $results[0]->website ; ?></a></p>
-    <h3>bio:</h3>
-    <p class="bio-text"><?php echo $results[0]->bio ; ?></p>
-</div><!-- .profile -->
-
-
+  <h1><?php echo "{$this->session->userdata('f_name')} {$this->session->userdata('l_name')}" ; ?></h1>
+  
+  <div class="profile-left">
+  
+      <img src="images/<?php echo $pic ; ?>.png" width="130" height="129" alt="<?php echo $alt ; ?>" class="user-pic">
+      <p class="edit-profile"><a href="/update-profile">edit your profile</a></p>
+  
+  </div><!-- .profile-left -->
+  
+  <div class="profile">
+  
+  <?php     
+      echo $location ;
+      echo $website ;
+      echo $bio ;
+  ?>
+  
+  </div><!-- .profile -->
 
 </div><!-- .main-content -->

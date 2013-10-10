@@ -64,7 +64,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6e1d6b', end
 	color: #E17600;
 }
 .btn-small {
-	background: #6E1D6B;
+	background-color: #6E1D6B;
 	display: block;
 	height: 20px;
 	font-weight: bold;
@@ -360,7 +360,6 @@ fieldset {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	color: #6E1D6B;
-	/*text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);*/
 }
 .welcome a {
 	color: ;
@@ -371,6 +370,28 @@ fieldset {
 	color: ;
 	text-decoration: underline;
 }
+.main-content p.intro {
+	font-size: 22px;
+	line-height: 30px;
+	font-family: 'Bree Serif', 'Trebuchet MS';
+	color: #6E1D6B;
+	margin: 0px 30px 20px;
+}
+#sign-in-home {
+	width:100px;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: none;
+	margin-right: auto;
+	margin-left: auto;
+	clear: both;
+	float: none;
+	text-align: center;
+}
+.sign-up {
+	font-size:12px;
+	margin-left:30px;
+}
 #join {
 	float: right;
 }
@@ -379,7 +400,7 @@ fieldset {
 	float: right;
 }
 #send-tweet fieldset legend {
-	font-size: 16px;
+	font-size: 27px;
 	font-family: 'Bree Serif', 'Trebuchet MS';
 	font-weight: normal;
 	text-align: left;
@@ -401,7 +422,7 @@ fieldset {
 	float: left;
 }
 /* tabs on dashboard */
-.profile-nav {
+.horizontal-nav {
 	list-style: none;
 	padding: 0px;
 	height: 20px;
@@ -409,19 +430,18 @@ fieldset {
 	margin-left: 0px;
 	font-weight: bold;
 }
-.profile-nav li {
+.horizontal-nav li {
 	float: left;
 	margin-right: 15px;
 	border-right: 1px solid #000;
 	padding-right: 15px;
 }
-.profile-nav a {
-	color: #FF931E;
+.horizontal-nav a {
+	color: #0066FF;
 	text-decoration: none;
 	font-weight: bold;
-	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.7);
 }
-.profile-nav a:hover {
+.horizontal-nav a:hover {
 	text-decoration: underline;
 }
 .count {
@@ -436,7 +456,7 @@ fieldset {
 	float: right;
 	margin-top: 5px;
 }
-.profile-nav .last {
+.horizontal-nav .last {
 	border-style: none;
 }
 /* sign in form */
@@ -468,6 +488,10 @@ fieldset {
 .profile {
 	float: right;
 	width: 470px;
+}
+.profile-left {
+	float: left;
+	width: 130px;
 }
 .profile h3 {
 	font-size: 16px;
@@ -515,4 +539,31 @@ fieldset {
 	padding-top: 3px;
 	padding-bottom: 3px;
 }
-
+.edit-profile {
+	float:left;
+	clear:both;
+	width:130px;
+	font-size:14px;
+	text-align:center;
+}
+.follow-profile {
+	display: block;
+	clear:both;
+	width:50px;
+	height: 20px;
+	color: #FFF;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	background-color: #6E1D6B;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 20px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.follow-profile:hover {
+	color: #FF931E;
+}

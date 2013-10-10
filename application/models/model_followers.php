@@ -1,5 +1,5 @@
 <?php
-class Tweets extends CI_Model {
+class Model_followers extends CI_Model {
 
 	// take data from tweet form add to tweets
 	public function add_tweet() {
@@ -15,10 +15,8 @@ class Tweets extends CI_Model {
 		}
 	}
 
+	// Get all tweets and user info
 	function get_tweets() {
-		// single row
-		//$query = $this->db->get('users', 1);
-		// foreach
 		$this->db->select('*');
 		$this->db->from('tweets');
 		$this->db->order_by("date", "desc");
@@ -28,17 +26,19 @@ class Tweets extends CI_Model {
 		}
 
 
-}
-//		$this->db->where('email' , $this->input->post('email')) ;
-//		$this->db->where('pw' , md5($this->input->post('password'))) ;
-//		$query = $this->db->get('users') ;
-//		
-//		$query = $this->db->query('SELECT * FROM tweets');
-//$query =  $this->db->get('tweets') ;
-//
-//
-//
-//$this->db->select('*');
+	// Get all users who logged in user follows
+	function get_following($user_id) {
+		$this->db->from('followers');
+		$this->db->where('followers.follower', $user_id);
+		$this->db->join('users', 'users.user_id = followers.following');
+		$query =  $this->db->get() ;
+		return $query->result();
+		}
+
+
+} ///////////////////////
+
+
 
 
 

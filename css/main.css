@@ -567,3 +567,10 @@ fieldset {
 .follow-profile:hover {
 	color: #FF931E;
 }
+.angel {
+	clear: both;
+	float: right;
+	margin-top: 20px;
+	margin-right: 290px;
+	margin-bottom: 20px;
+}

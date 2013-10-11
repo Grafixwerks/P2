@@ -38,4 +38,7 @@
 
 <?php endforeach  ?> 
 
+<br class="clr-flt">
 </div><!-- .main-content -->
+
+<img src="<?php echo site_url(); ?>images/angel.png" width="376" height="219" class="angel" alt="Andrew Pearson" />

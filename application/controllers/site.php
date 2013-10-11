@@ -15,7 +15,7 @@ class Site extends CI_Controller {
 		if ($this->session->userdata('is_logged_in')) {
 			$this->load->view('view_new_tweet' ) ;
 		} else {
-			$this->load->view('view_sign_in_link' ) ;;
+			$this->load->view('view_join_link' ) ;;
 		}
 		$this->load->view('view_tweets', $data) ;
 		$this->load->view('view_footer', $data) ;

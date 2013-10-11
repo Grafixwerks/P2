@@ -15,7 +15,6 @@ $(document).ready(function() {
 });
 
 	  // Password input instructions, remove on focus, uses background image
-	  
 	  $("#password").focus(function() {
 		  $(this).addClass("active");
 		  $(this).removeClass("inactive");
@@ -24,7 +23,6 @@ $(document).ready(function() {
 	  $("#password").blur(function() {
 			  if($(this).val() == "") $(this).removeClass("active").addClass("inactive");
 	  });
-
 
 // Tweet input instructions, remove on focus
 	  $("#tweet-msg").val("Create your tweet, 140 characters max.").css('color', '#808080');
@@ -45,8 +43,8 @@ $(document).ready(function() {
 // These show and hide tabs
 
 // Hide things on load
-      $('#tab-two').hide();
-      $('#tab-three').hide();
+//      $('#tab-two').hide();
+//      $('#tab-three').hide();
 
 // show/hide tab content on click
     $('.tweets-tab').click(function () {

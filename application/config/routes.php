@@ -42,7 +42,9 @@ $route['default_controller'] = "site";
 $route['404_override'] = '';
 
 $route['profile'] = "profile";
+$route['update-profile'] = "sign_in/update_profile";
 $route['user/(:any)'] = "profile/user/$1";
+$route['dashboard'] = "profile/dashboard" ;
 $route['users'] = "profile/list_users" ;
 $route['following'] = "profile/list_following" ;
 $route['sign-in'] = "sign_in";
@@ -50,9 +52,9 @@ $route['log-out'] = "sign_in/sign_out";
 $route['join'] = "sign_in/join";
 $route['join-success'] = "sign_in/join_success";
 $route['confirm/(:any)'] = "sign_in/register_user/$1";
-$route['update-profile'] = "sign_in/update_profile";
-
-
+$route['delete-tweet/(:any)'] = "controller_tweet/delete/$1";
+$route['edit-tweet/(:any)'] = "controller_tweet/edit/$1";
+$route['error'] = "site/error";
 
 
 //$route['test'] = "sign_in/confirm_registration";

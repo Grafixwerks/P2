@@ -161,7 +161,17 @@ class Model_users extends CI_Model {
 		}
 
 
-} // close class Model_users
-// array('user_id' => '$user_id')
 
-// $query = $this->db->get_where('Workorder', array('WOrder'=>$woID), 1, 0);
+	function get_dashboard() {
+		$user_id = $this->session->userdata('user_id') ;
+		$this->db->from('users');
+		$this->db->where('users.user_id', $user_id);
+		$this->db->order_by("date", "desc"); 
+		$this->db->join('tweets', 'tweets.user_id = users.user_id');
+		$query =  $this->db->get() ;
+		return $query->result();
+		}
+
+
+
+} // close class Model_users

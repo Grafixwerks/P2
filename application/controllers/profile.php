@@ -28,6 +28,20 @@ class Profile extends CI_Controller {
 	}
 
 
+	// User dashboard page
+	public function dashboard()
+	{
+		$this->load->model('model_users');
+		$this->load->helper('form');
+		
+		$data['results'] = $this->model_users->get_dashboard() ;
+		$data['title'] = "User Profile" ;
+		$this->load->view('view_header', $data) ;
+		$this->load->view('view_dashboard', $data) ;
+		$this->load->view('view_footer') ;
+	}
+
+
 	// List all Users page
 	public function list_users()
 	{

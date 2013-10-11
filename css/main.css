@@ -249,7 +249,7 @@ ul.nav ul.dropdown li:hover {
 }
 .tweet-right {
 	float: right;
-	width: 80px;
+	width: 100px;
 }
 .tweet-right .date {
 	text-align: right;
@@ -456,6 +456,13 @@ fieldset {
 	float: right;
 	margin-top: 5px;
 }
+.delete {
+	width: 40px;
+	float: right;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
 .horizontal-nav .last {
 	border-style: none;
 }

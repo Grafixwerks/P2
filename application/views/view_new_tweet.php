@@ -15,7 +15,9 @@ $attributes = array('id' => 'send-tweet');
       <fieldset>
         <legend>Now let us upload the holy tweet of the Lord.</legend>
         <label for="tweet-msg" class="tweet-label">Message:</label>
-        <input type="text" name="tweet" id="tweet-msg"  class="tweet-txt" value="<?php echo set_value('tweet'); ?>"  maxlength="140" />
+        
+        <textarea name="tweet" id="tweet-msg" class="tweet-txt" ><?php echo set_value('tweet'); ?></textarea>
+        
         <input type="submit" name="submit" value="Tweet" id="btn-tweet" class="btn" />
       </fieldset>
       <br class="clr-flt">

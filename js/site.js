@@ -27,20 +27,19 @@ $(document).ready(function() {
 
 
 // Tweet input instructions, remove on focus
-
-	  $("#tweet-msg").attr("value", "Create your tweet, 140 characters max.").css('color', '#808080');
+	  $("#tweet-msg").val("Create your tweet, 140 characters max.").css('color', '#808080');
 	  var text1 = "Create your tweet, 140 characters max.";
 	  
 	  $("#tweet-msg").focus(function() {
-			  if($(this).attr("value") == text1) $(this).attr("value", "").css('color', '#000');
+			  if($(this).val() == text1) $(this).val("").css('color', '#000');
 	  });
 	  
 	  $("#tweet-msg").blur(function() {
-			  if($(this).attr("value") == "") $(this).attr("value", text1).css('color', '#808080');
+			  if($(this).val() == "") $(this).val(text1).css('color', '#808080');
 	  });
 	  
 	  $("#btn-tweet").click(function() {
-			  if($('#tweet-msg').attr("value") == text1) $('#tweet-msg').attr("value", "");
+			  if($('#tweet-msg').val() == text1) $('#tweet-msg').val('');
 	  });
 
 // These show and hide tabs
@@ -49,7 +48,7 @@ $(document).ready(function() {
       $('#tab-two').hide();
       $('#tab-three').hide();
 
-// show/hide on pagination link click
+// show/hide tab content on click
     $('.tweets-tab').click(function () {
       $('.tab-content').hide(); 											 
       $('#tab-one').show();

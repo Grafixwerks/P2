@@ -1,11 +1,11 @@
 <div class="main-content">
 
 <?php
-//	echo '<pre>' ;
+	//echo '<pre>' ;
 //	print_r($results) ;
 //	print_r($this->session->all_userdata()) ;
-//	print_r($user_info) ;
-//	echo '</pre>' ;
+	//print_r($user_info) ;
+	//echo '</pre>' ;
 	
 
 ?>

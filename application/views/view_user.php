@@ -1,4 +1,5 @@
 <?php
+
 $f_name = '' ;
 $l_name = '' ;
 $location = '' ;
@@ -6,7 +7,9 @@ $website = '' ;
 $bio = '' ;
 $pic = '' ;
 $alt = '' ;
-
+$unfollow = '' ;
+$follow = '' ;
+$link = '' ;
 if(empty($results)){
     // no records to display
 	$f_name = 'no records to display' ;
@@ -39,10 +42,37 @@ if(empty($results)){
 	
 	
 }
+if ($this->session->userdata('is_logged_in')) {
+	$follow =  '<a href="' ;
+	$follow .= site_url() ;
+	$follow .= 'follow/' ;
+	$follow .= $results[0]->user_id ;
+	$follow .= '" class="follow-profile">follow</a>' ;
+	
+	$unfollow =  '<a href="' ;
+	$unfollow .= site_url() ;
+	$unfollow .= 'unfollow/' ;
+	$unfollow .= $results[0]->user_id ;
+	$unfollow .= '" class="follow-profile">unfollow</a>' ;
+	
+	if ( $is_following == TRUE ) {
+		$link = $unfollow ;
+	} else {
+		$link = $follow ;
+	}
+	
+	} else {
+	//$link = '' ;
+	}
+
+
 
 
 
 ?>
+
+
+
 <div class="main-content">
 
 <?php
@@ -50,6 +80,13 @@ if(empty($results)){
 //  echo '<pre>' ;
 //  print_r($results) ;
 //  echo '</pre>' ;
+
+//  echo '</pre>' ;
+//echo $test ;
+//echo '<br />is_following ' ;
+
+//echo $is_following ;
+
 ?>
 
 <h1><?php echo "$f_name $l_name" ; ?></h1>
@@ -57,8 +94,8 @@ if(empty($results)){
   <div class="profile-left">
   <img src="<?php echo site_url(); ?>images/<?php echo $pic ; ?>.png" width="130" height="129" alt="<?php echo $alt ; ?>" class="user-pic">
       
-  <a href="#" class="follow-profile">follow</a>
-  
+  <?php echo $link ; ?>
+
   </div><!-- .profile-left -->
 
 

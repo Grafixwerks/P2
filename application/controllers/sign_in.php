@@ -44,7 +44,7 @@ class Sign_in extends CI_Controller {
 	// Log out: destroy session and redirect to home page
 	public function sign_out() {
 		$this->session->sess_destroy() ;
-		redirect(sign_in/index) ;
+		redirect($_SERVER['HTTP_REFERER']) ;
 	}
 
 	// Join form page

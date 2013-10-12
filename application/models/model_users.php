@@ -4,7 +4,13 @@ class Model_users extends CI_Model {
 	public function can_log_in() {
 		
 		$this->db->where('email' , $this->input->post('email')) ;
-		$this->db->where('pw' , md5($this->input->post('password'))) ;
+		$pw = $this->input->post('password') ;
+		$pw = md5($pw) ;
+		$pw .= 'MoD52R6038j6mD' ;
+		$pw = md5($pw) ;
+		$this->db->where('pw' , $pw) ;
+		// old, only md5
+		//$this->db->where('pw' , md5($this->input->post('password'))) ;
 		$query = $this->db->get('users') ;
 		
 		if ( $query->num_rows() == 1 ) {
@@ -30,11 +36,19 @@ class Model_users extends CI_Model {
 
 	public function add_temp_user($confirm_code) {
 		// add salt
+		
+		$pw = $this->input->post('password') ;
+		$pw = md5($pw) ;
+		$pw .= 'MoD52R6038j6mD' ;
+		$pw = md5($pw) ;
+		//$this->db->where('pw' , $pw) ;		
 		$data = array (
 			'f_name' => $this->input->post('f_name') ,
 			'l_name' => $this->input->post('l_name') ,
 			'email' => $this->input->post('email') ,
-			'pw' => md5( $this->input->post('password') ) ,
+			'pw' => $pw ,
+			// old md5
+			//'pw' => md5( $this->input->post('password') ) ,
 			'confirm_code' => $confirm_code 
 		) ;
 		

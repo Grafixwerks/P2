@@ -11,8 +11,8 @@
 ?>
     <ul class="horizontal-nav">
       <li>Latest Tweets</li>
-      <li><a href="<?php echo site_url(); ?>users" >List Users</a></li>
-      <li class="last"><a href="/following" >Following</a></li>
+      <li><a href="<?php echo site_url(); ?>following" >People you Follow</a></li>
+      <li class="last"><a href="<?php echo site_url(); ?>users" >All Users</a></li>
     </ul>
     <!-- .horizontal-nav -->
 

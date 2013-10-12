@@ -19,8 +19,23 @@ class Profile extends CI_Controller {
 	public function user($user_id)
 	{
 		$this->load->model('model_users');
-		//$user_id = $this->session->userdata('user_id') ;
+		$this->load->model('model_followers');
+		// Check if current user logged in
+		if ( $this->session->userdata('user_id') != NULL ) {
+			// if yes check DB if logged in user is following 
+			if ( $this->model_followers->is_follower($user_id) ) {
+				$data['is_following'] = TRUE ;
+			} else {
+				$data['is_following'] = FALSE ;
+			}
+			//$data['test'] = 'Hello Sexy!' ;
+		} else { 
+			//$data['test'] = 'Boo' ;
+			$data['is_following'] = FALSE ;
+		}
 		$data['results'] = $this->model_users->get_user($user_id) ;
+		
+		
 		$data['title'] = "User Profile" ;
 		$this->load->view('view_header', $data) ;
 		$this->load->view('view_user', $data) ;
@@ -68,4 +83,5 @@ class Profile extends CI_Controller {
 	}
 
 
-}
+
+} /////////////////////

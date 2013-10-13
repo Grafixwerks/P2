@@ -596,3 +596,10 @@ fieldset {
 .tab-content {
 	min-height:200px;
 }
+#edit-pro {
+	color:#fff;
+	text-decoration:none;
+}
+#edit-pro:hover {
+	color:#FF931E;
+}

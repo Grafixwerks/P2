@@ -42,9 +42,9 @@ $(document).ready(function() {
 
 // These show and hide tabs
 
-// Hide things on load
-//      $('#tab-two').hide();
-//      $('#tab-three').hide();
+// Hide tab contents on load
+      $('#tab-two').hide();
+      $('#tab-three').hide();
 
 // show/hide tab content on click
     $('.tweets-tab').click(function () {

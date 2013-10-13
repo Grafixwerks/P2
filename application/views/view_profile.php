@@ -29,7 +29,7 @@
   <div class="profile-left">
   
       <img src="images/<?php echo $pic ; ?>.png" width="130" height="129" alt="<?php echo $alt ; ?>" class="user-pic">
-      <p class="edit-profile"><a href="/update-profile">edit your profile</a></p>
+      <p class="edit-profile"><a href="/update-profile" class="btn" id="edit-pro">edit your profile</a></p>
   
   </div><!-- .profile-left -->
   

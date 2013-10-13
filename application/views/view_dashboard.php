@@ -8,65 +8,38 @@
 //	print_r($this->session->all_userdata()) ;
 //	print_r($user_info) ;
 //	echo '</pre>' ; 
-$i = 0 ;
-$user = '' ;
+//$i = 0 ;
+//$user = '' ;
 $user_follows = array() ;
-
-
-
-
+$no_tweet = '' ;
+$no_follow = '' ;
+$no_follower = '' ;
 
 
 // check if no results returned for logged in user tweets
-$no_tweet = '' ;
 if ( $results_tweet == NULL ) {
 	$no_tweet = '<p>You don\'t have any tweets yet.</p>' ;
 }
 
 // Check if there are no results for people logged in user is following, display message
-$no_follow = '' ;
 if ( $results_following == NULL ) {
 	$no_follow = '<p>You are not following anyone yet.</p>' ;
 } else {
 	// grab list of people that are followed by logged in user for check against users who follow logged in user
-	
 	foreach($results_following as $user) {
 		$user_follows[] = $user->user_id ;
 	}
-	
-	foreach ($results_follower as $user) {
-		
-		foreach($user_follows as $follow) {
-			if ( $user->user_id == $follow ) {
-				$i++ ;
-			} 
-		}	
-	}	
 }
 
 // Check if there are no results for people following the logged in user, display message
-$no_follower = '' ;
 if ( $results_follower == NULL ) {
-	$no_follower = '<p>Noone is following you.</p>' ;
-} else {
-
-
-
-// build link for follow / unfollow 
-if ( $i == 1 ) { $link_text = 'unfollow' ; } else { $link_text = 'follow' ; } ;
-
-$url = site_url() ;
-$url .= $link_text ;
-$url .= '/' ;
-$url .= $user->user_id ;
-
-
-
+	$no_follower = '<p>Nobody is following you.</p>' ;
 }
 
-
-
+// form parameters
 $attributes = array('id' => 'send-tweet');
+
+
 ?>
 <div class="main-content">
 
@@ -146,6 +119,9 @@ $attributes = array('id' => 'send-tweet');
           </div><!-- .tweet-left -->
   
           <div class="tweet-right">
+
+
+          
               <a href="<?php echo site_url(); ?>unfollow/<?php echo $user->user_id ; ?>" class="btn-small follow">unfollow</a> 
           </div><!-- .tweet-right --> 
   
@@ -177,9 +153,19 @@ $attributes = array('id' => 'send-tweet');
                 <h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
                 <p><?php echo $user->bio ?></p>
             </div><!-- .tweet-left -->
+
+
     
             <div class="tweet-right">
-                <a href="<?php echo $url ; ?>" class="btn-small follow"><?php echo $link_text ; ?></a> 
+
+<?php 
+		  if (in_array( $user->user_id , $user_follows ) ) {
+			  echo "<a href=\"unfollow/{$user->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
+		  } else {
+			  echo "<a href=\"follow/{$user->user_id}\" class=\"btn-small follow\">follow</a>" ;
+		  }
+
+ ?>
             </div><!-- .tweet-right --> 
     
             <br class="clr-flt">

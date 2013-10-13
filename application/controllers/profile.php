@@ -47,9 +47,18 @@ class Profile extends CI_Controller {
 	public function dashboard()
 	{
 		$this->load->model('model_users');
+		$this->load->model('model_followers');
 		$this->load->helper('form');
+		$data['results_tweet'] = $this->model_users->get_dashboard() ;
+		$user_id = $this->session->userdata('user_id') ;
+		// get users followed by logged in user
+		$data['results_following'] = $this->model_followers->get_following() ;
 		
-		$data['results'] = $this->model_users->get_dashboard() ;
+		
+		$data['results_follower'] = $this->model_followers->get_follower() ;
+
+
+		
 		$data['title'] = "User Profile" ;
 		$this->load->view('view_header', $data) ;
 		$this->load->view('view_dashboard', $data) ;
@@ -60,10 +69,17 @@ class Profile extends CI_Controller {
 	// List all Users page
 	public function list_users()
 	{
+		$this->load->helper('form');
 		$this->load->model('model_users');
 		$data['results'] = $this->model_users->get_all_user() ;
 		$data['title'] = "List Users" ;
 		$this->load->view('view_header', $data) ;
+		// check if user logged in show tweet form or sign in
+		if ($this->session->userdata('is_logged_in')) {
+			$this->load->view('view_new_tweet' ) ;
+		} else {
+			$this->load->view('view_join_link' ) ;;
+		}
 		$this->load->view('view_list_users', $data) ;
 		$this->load->view('view_footer') ;
 	}
@@ -71,6 +87,7 @@ class Profile extends CI_Controller {
 	// List of all people current user is following
 	public function list_following()
 	{
+		$this->load->helper('form');
 		$this->load->model('model_followers');
 		$this->load->model('model_users');
 		$user_id = $this->session->userdata('user_id') ;
@@ -78,6 +95,12 @@ class Profile extends CI_Controller {
 		$data['results'] = $this->model_followers->get_following($user_id) ;
 		$data['title'] = "List following" ;
 		$this->load->view('view_header', $data) ;
+		// check if user logged in show tweet form or sign in
+		if ($this->session->userdata('is_logged_in')) {
+			$this->load->view('view_new_tweet' ) ;
+		} else {
+			$this->load->view('view_join_link' ) ;;
+		}
 		$this->load->view('view_list_following', $data) ;
 		$this->load->view('view_footer') ;
 	}

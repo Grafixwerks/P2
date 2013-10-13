@@ -36,7 +36,7 @@ class Controller_tweet extends CI_Controller {
 			$this->load->model('model_tweets');
 			
 			if ($this->model_tweets->add_tweet() ) {
-				redirect(site) ;
+				redirect($_SERVER['HTTP_REFERER']) ;
 			} else redirect(error) ;	
 
 		} else {

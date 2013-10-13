@@ -5,7 +5,7 @@
 
 <a href="<?php echo site_url(); ?>join" class="btn" id="sign-in-home">Join now</a>
 
-<p class="sign-up">Already a member?  <a href="<?php echo site_url(); ?>sign-in">Sign in</a>.</p>
+<p class="sign-up">Already a member?  <strong><a href="<?php echo site_url(); ?>sign-in">Sign in</a></strong>.</p>
 
 </div><!-- .main-content -->
 

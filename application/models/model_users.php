@@ -159,7 +159,7 @@ class Model_users extends CI_Model {
 	function get_user($user_id) {
 		$this->db->from('users');
 		$this->db->where('users.user_id', $user_id); 
-		$this->db->join('tweets', 'tweets.user_id = users.user_id');
+		$this->db->join('tweets', 'tweets.user_id = users.user_id', 'left');
 		$query =  $this->db->get() ;
 		return $query->result();
 		}

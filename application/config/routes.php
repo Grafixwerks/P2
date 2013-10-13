@@ -41,22 +41,22 @@
 $route['default_controller'] = "site";
 $route['404_override'] = '';
 
-$route['profile'] = "profile";
-$route['update-profile'] = "sign_in/update_profile";
-$route['dashboard'] = "profile/dashboard" ;
-$route['following'] = "profile/list_following" ;
-$route['users'] = "profile/list_users" ;
-$route['user/(:any)'] = "profile/user/$1";
-$route['sign-in'] = "sign_in";
-$route['log-out'] = "sign_in/sign_out";
-$route['join'] = "sign_in/join";
-$route['join-success'] = "sign_in/join_success";
-$route['confirm/(:any)'] = "sign_in/register_user/$1";
-$route['delete-tweet/(:any)'] = "controller_tweet/delete/$1";
-$route['edit-tweet/(:any)'] = "controller_tweet/edit/$1";
-$route['follow/(:any)'] = "controller_follow/add/$1";
-$route['unfollow/(:any)'] = "controller_follow/delete/$1";
-$route['error'] = "site/error";
+$route['profile'] = "profile"; // logged in user profile
+$route['update-profile'] = "sign_in/update_profile"; // edit logged in user profile
+$route['dashboard'] = "profile/dashboard" ; // logged in user dashboard for site
+$route['following'] = "profile/list_following" ; // list of people logged in user is following
+$route['users'] = "profile/list_users" ; // list all users
+$route['user/(:any)'] = "profile/user/$1"; // show profile of user by user_id
+$route['sign-in'] = "sign_in"; // user sign in
+$route['log-out'] = "sign_in/sign_out"; // log out current user, redirect to HTTP referrer
+$route['join'] = "sign_in/join"; // Form to join
+$route['join-success'] = "sign_in/join_success"; // confirmation of form submission 
+$route['confirm/(:any)'] = "sign_in/register_user/$1"; // confirm email code, send to 2nd form
+$route['delete-tweet/(:any)'] = "controller_tweet/delete/$1"; // deletes tweet by tweet_id
+$route['edit-tweet/(:any)'] = "controller_tweet/edit/$1"; // edit tweet by tweet_id
+$route['follow/(:any)'] = "controller_follow/add/$1"; // logged in user adds person to follow
+$route['unfollow/(:any)'] = "controller_follow/delete/$1"; // logged in user deletes person follow
+$route['error'] = "site/error"; // generic error
 
 
 //$route['test'] = "sign_in/confirm_registration";

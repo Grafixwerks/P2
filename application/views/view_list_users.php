@@ -8,13 +8,21 @@
 //	echo '</pre>' ;
 	
 
+$you_follow = '' ;
+if ($this->session->userdata('is_logged_in')) {	
+$you_follow = '<li><a href="' ;
+$you_follow .= site_url() ;
+$you_follow .= 'following" >People you follow</a></li>' ;
+} 
+
+
 ?>
     <ul class="horizontal-nav">
-      <li><a href="/" >Latest Tweets</a></li>
-      <li>List Users</li>
-      <li class="last"><a href="#" >Following</a></li>
-    </ul>
-    <!-- .horizontal-nav -->
+      <li><a href="<?php echo site_url(); ?>" >Latest Tweets</a></li>
+      <?php echo $you_follow ; ?>
+      <li class="last">All Users</li>
+    </ul><!-- .horizontal-nav -->
+    
 
 <?php foreach ($results as $user): ?> 
 

@@ -44,13 +44,25 @@ class Model_followers extends CI_Model {
 		}
 	}
 
-	// get user following
-	function get_follower($user_id) {
+	// get user follower
+	function get_follower() {
+		$user_id = $this->session->userdata('user_id') ;
 		$this->db->from('followers');
-		$this->db->where('followers.follower', $user_id);
+		$this->db->where('followers.following', $user_id);
+		$this->db->join('users', 'users.user_id = followers.follower');
+		
 		$query =  $this->db->get() ;
 		return $query->result();
 	}
+
+
+//	function get_follower($user_id) {
+//		$this->db->from('followers');
+//		$this->db->where('followers.follower', $user_id);
+//		$query =  $this->db->get() ;
+//		return $query->result();
+//	}
+
 
 
 	// get user following
@@ -64,26 +76,15 @@ class Model_followers extends CI_Model {
 	}
 
 
-
-//
-//
-//
-//	function get_user($user_id) {
-//		$this->db->from('users');
-//		$this->db->where('users.user_id', $user_id); 
-//		
-//		$query =  $this->db->get() ;
-//		return $query->result();
-//		}
-//
-//
-
-
-
-
-
-
-
+	// get user following
+	function get_followz() {
+		$user_id = $this->session->userdata('user_id') ;
+		$this->db->from('followers');
+		$this->db->where('followers.follower', $user_id);
+		//$this->db->join('users', 'users.user_id = followers.following');
+		$query =  $this->db->get() ;
+		return $query->result();
+	}
 
 } ///////////////////////
 

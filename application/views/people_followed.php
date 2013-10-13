@@ -1,23 +1,9 @@
-<div class="main-content">
-
-<?php
-	//echo '<pre>' ;
-//	print_r($results) ;
-//	print_r($this->session->all_userdata()) ;
-	//print_r($user_info) ;
-	//echo '</pre>' ;
-	
-
+<?php 
+// homepage 2nd tab
 ?>
-    <ul class="horizontal-nav">
-      <li><a href="<?php echo site_url(); ?>" >Latest Tweets</a></li>
-      <li>People you Follow</li>
-      <li class="last"><a href="<?php echo site_url(); ?>users" >All Users</a></li>
-    </ul><!-- .horizontal-nav -->
-    
+<div class="tab-content" id="tab-two" >
 
-
-<?php foreach ($results as $user): ?> 
+<?php foreach ($followed as $user): ?> 
 
 	<div class="tweet">
 
@@ -36,6 +22,8 @@
 
 	</div><!-- .tweet -->
 
-<?php endforeach  ?> 
+<?php endforeach 
 
-</div><!-- .main-content -->
+ ?> 
+
+</div><!-- .tab-content -->

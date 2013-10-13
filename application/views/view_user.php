@@ -1,5 +1,5 @@
 <?php
-
+// user profile
 $f_name = '' ;
 $l_name = '' ;
 $location = '' ;
@@ -112,17 +112,9 @@ if ($this->session->userdata('is_logged_in')) {
 
 </div><!-- .profile -->
 
+<br class="clr-flt" />
 
-    <br class="clr-flt">
-    <ul class="horizontal-nav">
-      <li><a href="#" class="tweets-tab">Tweets</a></li>
-      <li><a href="#" class="following-tab">Following</a></li>
-      <li class="last"><a href="#" class="followers-tab">Followers</a></li>
-    </ul>
-    <!-- .horizontal-nav -->
-
-
-<div class="tab-content" id="tab-one">
+<h2>Tweets</h2>
 
 <?php foreach ($results as $tweet): ?>
 
@@ -131,8 +123,7 @@ if ($this->session->userdata('is_logged_in')) {
     <div class="tweet-left">
       <p><?php echo $tweet->tweet ?></p>
     </div><!-- .tweet-left -->
-        
-        
+
     <div class="tweet-right">
     <span class="date"><?php echo date( "F j, Y", strtotime( $tweet->date ) ) ; ?></span>  
     </div><!-- .tweet-right --> 
@@ -142,110 +133,5 @@ if ($this->session->userdata('is_logged_in')) {
 </div><!-- .tweet -->
 
 <?php endforeach  ?>       
-
-</div><!-- #tab-one -->
-    
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-    
-<div class="tab-content" id="tab-two">
-
-  <h2>Following</h2>
-  
-  <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
-    
-    <div class="tweet-left">
-      <h3><a href="#">Thomas Durran</a></h3>
-      <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
-    </div><!-- .tweet-left -->
-    
-    
-   <!--  <div class="tweet-right"> 
-    <a href="#" class="btn-small follow">unfollow</a> 
-    </div>.tweet-right -->
-     
-    
-    <br class="clr-flt">
-    
-  </div><!-- .tweet -->
-  
-  
-
-  
-</div><!-- #tab-2 -->
-    
-
-
-
-
-
-
-    
-    <div class="tab-content" id="tab-three">
-      <h2>Followers</h2>
-      <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
-        <div class="tweet-left">
-          <h3><a href="#">Thomas Durran</a> @TD</h3>
-          <p>Pellentesque tincidunt velit ac tellus malesuada, vel laoreet lectus dignissim.  Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. </p>
-        </div>
-        <!-- .tweet-left -->
-        
-        <div class="tweet-right"> <a href="#" class="btn-small follow">follow</a> </div>
-        <!-- .tweet-right --> 
-        <br class="clr-flt">
-      </div>
-      <!-- .tweet -->
-      
-      <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
-        <div class="tweet-left">
-          <h3><a href="#">Daisuke Murase</a> @typester</h3>
-          <p>Phiaculis nulla id purus convallis interdum. Sed aliquet consequat dui convallis venenatis. Nam sit amet arcu et tortor sodales semper.</p>
-        </div>
-        <!-- .tweet-left -->
-        
-        <div class="tweet-right"> <a href="#" class="btn-small follow">follow</a> </div>
-        <!-- .tweet-right --> 
-        <br class="clr-flt">
-      </div>
-      <!-- .tweet -->
-      
-      <div class="tweet"> <img src="images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
-        <div class="tweet-left">
-          <h3><a href="#">David Hollander</a> @typester</h3>
-          <p>Vestibulum at lectus ac enim suscipit mattis sit amet ut nunc. Pellentesque tincidunt velit a</p>
-        </div>
-        <!-- .tweet-left -->
-        
-        <div class="tweet-right"> <a href="#" class="btn-small follow">follow</a> </div>
-        <!-- .tweet-right --> 
-        <br class="clr-flt">
-      </div>
-      <!-- .tweet --> 
-      
-    </div>
-    <!-- #tab-3 --> 
-
-
-
-
-
-
-
-
-
-
 
 </div><!-- .main-content -->

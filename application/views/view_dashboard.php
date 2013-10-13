@@ -87,9 +87,9 @@ $attributes = array('id' => 'send-tweet');
 
 
 <ul class="horizontal-nav">
-    <li><a href="#" class="tweets-tab">Your Tweets</a></li>
-    <li><a href="#" class="following-tab">You're Following</a></li>
-    <li class="last"><a href="#" class="followers-tab">Following You</a></li>
+    <li><a href="#" class="tabz tweets-tab current">Your Tweets</a></li>
+    <li><a href="#" class="tabz following-tab">You're Following</a></li>
+    <li class="last"><a href="#" class="tabz followers-tab">Following You</a></li>
 </ul><!-- .horizontal-nav -->
 
     

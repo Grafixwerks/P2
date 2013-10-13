@@ -502,6 +502,7 @@ fieldset {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
+	margin-bottom: 10px;
 }
 .profile {
 	float: right;
@@ -567,7 +568,7 @@ fieldset {
 .follow-profile {
 	display: block;
 	clear:both;
-	width:50px;
+	width:90px;
 	height: 20px;
 	color: #FFF;
 	font-size:14px;

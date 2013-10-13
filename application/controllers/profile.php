@@ -46,7 +46,6 @@ class Profile extends CI_Controller {
 		$this->load->view('view_footer') ;
 	}
 
-
 	// User dashboard page
 	public function dashboard() {
 		if ( ($this->session->userdata('is_logged_in') == NULL) ) {

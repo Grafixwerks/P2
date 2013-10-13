@@ -1,9 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Profile extends CI_Controller {
-	// Logged in User's profile page
+	// Logged in user profile page
 	public function index()
 	{
+		///  check if logged in 
+		if ( ($this->session->userdata('is_logged_in') == NULL) ) {
+			redirect(site) ;
+		}
 		//$this->load->model('model_users');
 		//$user_id = $this->session->userdata('user_id') ;
 		//$data['results'] = $this->model_users->get_user($user_id) ;
@@ -44,8 +48,10 @@ class Profile extends CI_Controller {
 
 
 	// User dashboard page
-	public function dashboard()
-	{
+	public function dashboard() {
+		if ( ($this->session->userdata('is_logged_in') == NULL) ) {
+			redirect(site) ;
+		}
 		$this->load->model('model_users');
 		$this->load->model('model_followers');
 		$this->load->helper('form');

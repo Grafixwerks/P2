@@ -48,20 +48,22 @@ $(document).ready(function() {
 
 // show/hide tab content on click
     $('.tweets-tab').click(function () {
-      $('tabz').removeClass('current');
+      $('.tabz').removeClass('current');
 	  $(this).addClass('current');
 	  $('.tab-content').hide(); 											 
       $('#tab-one').show();
 	  return false;
     });
     $('.following-tab').click(function () {
-      $(this).addClass('current');
+      $('.tabz').removeClass('current');
+	  $(this).addClass('current');
 	  $('.tab-content').hide(); 											 
       $('#tab-two').show();
 	  return false;
     });
     $('.followers-tab').click(function () {
-      $(this).addClass('current');
+      $('.tabz').removeClass('current');
+	  $(this).addClass('current');
 	  $('.tab-content').hide(); 											 
       $('#tab-three').show();
 	  return false;

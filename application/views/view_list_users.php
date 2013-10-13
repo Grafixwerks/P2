@@ -1,4 +1,7 @@
-<div class="main-content">
+<?php
+// list of users
+// not used anymore
+?><div class="main-content">
 
 <?php
 //	echo '<pre>' ;

@@ -1,5 +1,5 @@
 <?php
-// user profile
+// user profile, takes user_id from link
 $f_name = '' ;
 $l_name = '' ;
 $location = '' ;

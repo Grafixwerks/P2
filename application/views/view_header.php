@@ -1,4 +1,5 @@
 <?php
+// site header
 // drop down menu for user account, li with nested ul
 $logged_in_menu = '<li><a href="" title="Account" id="acct">Account</a>' ;
 $logged_in_menu .= '<ul class="dropdown">' ;

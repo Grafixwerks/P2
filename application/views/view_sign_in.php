@@ -1,3 +1,6 @@
+<?php
+// sign in page
+?>
 <div class="welcome">
 
 <p class="intro">Holy Tweet sign in.</p>

@@ -1,4 +1,6 @@
 <?php
+// logged in user account dashboard
+
 //	echo '<pre>' ;
 //	print_r($results_following) ;
 //	print_r($results_follower) ;

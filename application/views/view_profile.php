@@ -1,4 +1,5 @@
 <?php
+// logged in user profile
   if ($this->session->userdata('city') != NULL) {
 	  $location = '<h3>location:</h3>' ;
 	  $location .= "<p>{$this->session->userdata('city')}, {$this->session->userdata('state')}</p>" ;

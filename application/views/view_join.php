@@ -1,3 +1,6 @@
+<?php
+// form to join
+?>
 <div class="welcome">
 
 <p class="intro">Join today and send God your message.</p>

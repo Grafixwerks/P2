@@ -1,3 +1,6 @@
+<?php
+// after successful part 1 of sign up
+?>
 <div class="main-content">
 
 <h1>Success!</h1>

@@ -1,4 +1,5 @@
 <?php
+// logged in user form to update their profile
 $options = array(
         '0' => 'Choose State',
 		'AL' => 'Alabama',

@@ -1,3 +1,6 @@
+<?php
+// form to create tweet
+?>
 <div class="main-content">
 
 <?php

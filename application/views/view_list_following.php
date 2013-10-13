@@ -1,3 +1,6 @@
+<?php
+// list of everyone logged in user follows
+?>
 <div class="main-content">
 
 <?php

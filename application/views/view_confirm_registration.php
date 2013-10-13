@@ -1,4 +1,5 @@
 <?php
+// Confirm email code and 2nd part of profile form
 $options = array(
         '0' => 'Choose State',
 		'AL' => 'Alabama',

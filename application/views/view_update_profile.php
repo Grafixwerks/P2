@@ -66,12 +66,11 @@ $attributes = array('class' => 'success', 'id' => 'success');
 ?>
 <div class="main-content">
 
-    <h1>Update your profile</h1>
+    <h1>Edit your profile</h1>
 
 
 
-
-<?php echo form_open('sign_in/update_user_validation', $attributes) ; ?>
+<?php echo form_open_multipart('sign_in/update_user_validation', $attributes) ; ?>
    
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 
@@ -116,6 +115,14 @@ $attributes = array('class' => 'success', 'id' => 'success');
       <label for="website" class="success-label">Website:</label>
       <input type="text" name="website" id="website" value="<?php echo $website ; ?>" class="txt" maxlength="50" />
     </div><!-- .text-group -->
+
+
+    <div class="text-group">
+      <label for="userfile" class="success-label">Picture:</label>
+      <input type="file" name="userfile" id="userfile" size="50" class="txt"  />
+    </div><!-- .text-group -->
+
+
 
 
     <div class="text-group">

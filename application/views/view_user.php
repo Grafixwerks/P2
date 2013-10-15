@@ -10,6 +10,9 @@ $alt = '' ;
 $unfollow = '' ;
 $follow = '' ;
 $link = '' ;
+$current_user = '' ;
+
+
 if(empty($results)){
     // no records to display
 	$f_name = 'no records to display' ;
@@ -17,6 +20,7 @@ if(empty($results)){
     // records have been returned
 	$f_name = "{$results[0]->f_name}" ;
 	$l_name = "{$results[0]->l_name }" ;
+	$pic = "{$results[0]->pic }" ;
 
 	if ($results[0]->city != NULL) {
 		$location = '<h3>location:</h3>' ;
@@ -39,10 +43,13 @@ if(empty($results)){
 	} else { $pic = 'unk-user' ;
 		$alt = "" ;
 	} 	
+}	
 	
-	
+
+if ( $this->session->userdata('is_logged_in')  ) {
+	$current_user = $this->session->userdata('user_id') ;
 }
-if ($this->session->userdata('is_logged_in')) {
+if ( $this->session->userdata('is_logged_in') && ( $current_user != $results[0]->user_id ) ) {
 	$follow =  '<a href="' ;
 	$follow .= site_url() ;
 	$follow .= 'follow/' ;
@@ -92,7 +99,7 @@ if ($this->session->userdata('is_logged_in')) {
 <h1><?php echo "$f_name $l_name" ; ?></h1>
 
   <div class="profile-left">
-  <img src="<?php echo site_url(); ?>images/<?php echo $pic ; ?>.png" width="130" height="129" alt="<?php echo $alt ; ?>" class="user-pic">
+  <img src="<?php echo site_url(); ?>images/user/<?php echo $pic ; ?>" width="130" height="129" alt="<?php echo $alt ; ?>" class="user-pic">
       
   <?php echo $link ; ?>
 

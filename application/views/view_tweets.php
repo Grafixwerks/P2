@@ -1,5 +1,7 @@
 <?php 
 // shows recent tweets on home page, list of users
+// $route['default_controller'] = "site";
+// public function index()
 ?>
 <div class="main-content">
 
@@ -45,7 +47,7 @@ foreach ($results as $tweet): ?>
 
 	<div class="tweet">
 
-		<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+		<img src="<?php echo site_url(); ?>images/user/<?php echo $tweet->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
 			<h3><a href="/user/<?php echo $tweet->user_id ; ?>"><?php echo $tweet->f_name ; ?> <?php echo $tweet->l_name ; ?></a> </h3>
@@ -99,7 +101,8 @@ if ($this->session->userdata('is_logged_in')) {
  foreach ($all_users as $user): ?> 
 	<div class="tweet">
 
-		<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+		<!--<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">-->
+        <img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
 			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>

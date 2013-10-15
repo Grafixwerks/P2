@@ -66,7 +66,7 @@ $attributes = array('class' => 'success', 'id' => 'success');
 
 
 
-<?php echo form_open('sign_in/data_validation', $attributes) ; ?>
+<?php echo form_open_multipart('sign_in/data_validation', $attributes) ; ?>
    
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 
@@ -92,6 +92,12 @@ $attributes = array('class' => 'success', 'id' => 'success');
     <div class="text-group">
       <label for="website" class="success-label">Website:</label>
       <input type="text" name="website" id="website" value="<?php echo set_value('website'); ?>" class="txt" maxlength="50" />
+    </div><!-- .text-group -->
+
+
+    <div class="text-group">
+      <label for="userfile" class="success-label">Picture:</label>
+      <input type="file" name="userfile" id="userfile" size="50" class="txt"  />
     </div><!-- .text-group -->
 
 

@@ -57,7 +57,7 @@ $route['edit-tweet/(:any)'] = "controller_tweet/edit/$1"; // edit tweet by tweet
 $route['follow/(:any)'] = "controller_follow/add/$1"; // logged in user adds person to follow
 $route['unfollow/(:any)'] = "controller_follow/delete/$1"; // logged in user deletes person follow
 $route['error'] = "site/error"; // generic error
-
+$route['upload'] = "upload"; // generic error
 
 //$route['test'] = "sign_in/confirm_registration";
 

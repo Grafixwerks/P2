@@ -2,6 +2,14 @@
 
 class Sign_in extends CI_Controller {
 
+
+//	function __construct()
+//	{
+//		parent::__construct();
+//		$this->load->helper(array('form', 'url', 'file'));
+//	}
+
+
 	// Sign in form page
 	public function index() {
 		$this->load->helper('form');
@@ -28,7 +36,7 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
-	// Check sign in email/pw in users table
+	// Sign in, check email/pw in users table
 	public function validate_credentials()
 	{
 		$this->load->model('model_users');
@@ -76,15 +84,15 @@ class Sign_in extends CI_Controller {
 			// build email
 			$this->email->from('andy@grafixwerks.com', 'Andy Pearson') ;
 			$this->email->to($this->input->post('email')) ;
-			$this->email->subject('Confirm your Hly Tweet account.') ;
+			$this->email->subject('Confirm your Holy Tweet account.') ;
 			$message = '<p>Thank you for joining Holy Tweet!</p>' ;
-			$message .= '<p><a href="'.base_url().'/confirm'.$confirm_code.'">Click here</a> to confirm your account.</p>' ;
+			$message .= '<p><a href="'.base_url().'/confirm/'.$confirm_code.'">Click here</a> to confirm your account.</p>' ;
 			$this->email->message($message) ;
 			
 			// send user an email if temp_user added
 			if ($this->model_users->add_temp_user($confirm_code) ) {
 				if ($this->email->send() ) {
-					echo 'msg sent' ;
+					//echo 'msg sent' ;
 				} else {
 					echo 'fail' ;
 				}			
@@ -115,10 +123,10 @@ class Sign_in extends CI_Controller {
 			// pull data out of temp_users, put into users and delete from temp_users
 			if ($user_data = $this->model_users->add_user($confirm_code) ) {
 				$data = array(
-					'f_name' => $user_data[f_name] ,
-					'l_name' => $user_data[l_name] ,
-					'email' => $user_data[email] ,
-					'user_id' => $user_data[user_id] ,
+					'f_name' => $user_data['f_name'] ,
+					'l_name' => $user_data['l_name'] ,
+					'email' => $user_data['email'] ,
+					'user_id' => $user_data['user_id'] ,
 					'is_logged_in' => 1
 				) ;
 				// set session logged in
@@ -126,7 +134,7 @@ class Sign_in extends CI_Controller {
 				redirect('sign_in/confirm_registration') ;
 			} else echo 'failed to add user' ;
 		} else {
-			echo 'bogus' ;
+			//echo 'bogus' ;
 		}
 		
 	}
@@ -148,10 +156,43 @@ class Sign_in extends CI_Controller {
 		$this->form_validation->set_rules('website', 'Website', 'trim|xss_clean|prep_url|strip_tags|max_length[50]') ;
 		$this->form_validation->set_rules('bio', 'Bio', 'required|trim|xss_clean|strip_tags|max_length[1000]') ;
 		$this->form_validation->set_message('alpha', 'Please choose a state.' ) ;
-
 		if ($this->form_validation->run() == TRUE) {
+		/////////////////////////////////////////////
+		// configure image upload
+		$config['upload_path'] = './images/user/';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['max_size']	= '1024';
+		$config['encrypt_name']	= 'TRUE';
+		// image upload for user profile picture
+		$this->load->library('upload', $config);
+		if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+			//$this->load->view('upload_form', $error);
+		}
+		else
+		{	
+			//$data['error'] = '';
+			$data = array('upload_data' => $this->upload->data());
+			$image_data = $this->upload->data() ;
+		
+			// set up image resize
+			$config['image_library'] = 'gd2';
+			$config['source_image'] = $image_data['full_path'];
+			$config['create_thumb'] = FALSE;
+			$config['maintain_ratio'] = TRUE;
+			$config['width'] = 130;
+			$config['height'] = 130;
+			$this->load->library('image_lib', $config); 
+			// resize image
+			$this->image_lib->resize();
+			// grab image name to send to db
+			$pic = $image_data['file_name'] ;
+			//$this->load->view('upload_success', $data);
+		}
+		//////////////////////////////
 			$this->load->model('model_users');
-			$this->model_users->add_user_info() ;
+			$this->model_users->add_user_info($pic) ;
 			redirect('site') ;
 		} else {
 			$this->load->helper('form');
@@ -162,7 +203,7 @@ class Sign_in extends CI_Controller {
 			}
 	}
 
-	// Validate data profile edit
+	// Process logged in user profile edit
 	public function update_user_validation() {
 		$this->load->library('form_validation') ;
 		$this->form_validation->set_rules('f_name', 'First name', 'required|trim|xss_clean|strip_tags|max_length[30]') ;
@@ -173,10 +214,44 @@ class Sign_in extends CI_Controller {
 		$this->form_validation->set_rules('website', 'Website', 'trim|xss_clean|prep_url|strip_tags|max_length[50]') ;
 		$this->form_validation->set_rules('bio', 'Bio', 'required|trim|xss_clean|strip_tags|max_length[1000]') ;
 		$this->form_validation->set_message('alpha', 'Please choose a state.' ) ;
-
+		$pic = 'unk-user.png' ;
+		// Validate data 
 		if ($this->form_validation->run() == TRUE) {
+		// configure image upload
+		$config['upload_path'] = './images/user/';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['max_size']	= '1024';
+		$config['encrypt_name']	= 'TRUE';
+		// image upload for user profile picture
+		$this->load->library('upload', $config);
+		if ( ! $this->upload->do_upload())
+		{
+			$error = array('error' => $this->upload->display_errors());
+			//$this->load->view('upload_form', $error);
+		}
+		else
+		{	
+			//$data['error'] = '';
+			$data = array('upload_data' => $this->upload->data());
+			$image_data = $this->upload->data() ;
+
+			// set up image resize
+			$config['image_library'] = 'gd2';
+			$config['source_image'] = $image_data['full_path'];
+			$config['create_thumb'] = FALSE;
+			$config['maintain_ratio'] = TRUE;
+			$config['width'] = 130;
+			$config['height'] = 130;
+			$this->load->library('image_lib', $config); 
+			// resize image
+			$this->image_lib->resize();
+			// grab image name to send to db
+			$pic = $image_data['file_name'] ;
+			//$this->load->view('upload_success', $data);
+		}
+			// send form info to db
 			$this->load->model('model_users');
-			$this->model_users->update_user() ;
+			$this->model_users->update_user($pic) ;
 			redirect('/profile') ;
 		} else {
 			$this->load->helper('form');
@@ -195,9 +270,6 @@ class Sign_in extends CI_Controller {
 		$this->load->view('view_update_profile', $data) ;
 		$this->load->view('view_footer') ;
 	}
-
-
-
 
 }  // Close class Sign_in
 

@@ -14,8 +14,8 @@
 | path to your installation.
 |
 */
+//$config['base_url']	= 'http://p2.uxhub.biz/';
 $config['base_url']	= 'http://localhost';
-
 /*
 |--------------------------------------------------------------------------
 | Index File

@@ -36,19 +36,16 @@ class Model_users extends CI_Model {
 
 	public function add_temp_user($confirm_code) {
 		// add salt
-		
 		$pw = $this->input->post('password') ;
 		$pw = md5($pw) ;
 		$pw .= 'MoD52R6038j6mD' ;
-		$pw = md5($pw) ;
-		//$this->db->where('pw' , $pw) ;		
+		$pw = md5($pw) ;	
 		$data = array (
 			'f_name' => $this->input->post('f_name') ,
 			'l_name' => $this->input->post('l_name') ,
 			'email' => $this->input->post('email') ,
 			'pw' => $pw ,
-			// old md5
-			//'pw' => md5( $this->input->post('password') ) ,
+			'pic' => 'unk-user.png' ,
 			'confirm_code' => $confirm_code 
 		) ;
 		
@@ -107,14 +104,14 @@ class Model_users extends CI_Model {
 	}
 
 	// take data from 2nd form add to users
-	public function add_user_info() {
+	public function add_user_info($pic) {
 		$user_id = $this->session->userdata('user_id') ;
 		$data = array (
-			'bio'			=> $this->input->post('bio') ,
-			//'pic'			=> $this->input->post('pic') ,
-			'city'			=> $this->input->post('city') ,
-			'state'			=> $this->input->post('state') ,
-			'website'		=> $this->input->post('website') ,
+			'bio'		=> $this->input->post('bio') ,
+			'pic'		=> $pic ,
+			'city'		=> $this->input->post('city') ,
+			'state'		=> $this->input->post('state') ,
+			'website'	=> $this->input->post('website') ,
 		) ;
 		$this->db->where('user_id' , $user_id ) ;
 		$query = $this->db->update('users' , $data) ;
@@ -127,14 +124,14 @@ class Model_users extends CI_Model {
 	}
 
 	// take data profile update form add to users
-	public function update_user() {
+	public function update_user($pic) {
 		$user_id = $this->session->userdata('user_id') ;
 		$data = array (
 			'f_name' 	=> $this->input->post('f_name') ,
 			'l_name' 	=> $this->input->post('l_name') ,
 			'email' 	=> $this->input->post('email') ,
 			'bio'		=> $this->input->post('bio') ,
-			//'pic'		=> $this->input->post('pic') ,
+			'pic'		=> $pic ,
 			'city'		=> $this->input->post('city') ,
 			'state'		=> $this->input->post('state') ,
 			'website'	=> $this->input->post('website') 

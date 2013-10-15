@@ -3,8 +3,9 @@
 // drop down menu for user account, li with nested ul
 $logged_in_menu = '<li><a href="" title="Account" id="acct">Account</a>' ;
 $logged_in_menu .= '<ul class="dropdown">' ;
-$logged_in_menu .= '<li><a href="/profile">View profile</a></li>' ;
 $logged_in_menu .= '<li><a href="/dashboard">Account dashboard</a></li>' ;
+$logged_in_menu .= '<li><a href="/profile">View profile</a></li>' ;
+$logged_in_menu .= '<li><a href="/update-profile">Edit profile</a></li>' ;
 $logged_in_menu .= '<li><a href="/log-out">Log out</a></li>' ;
 $logged_in_menu .= '</ul>' ;
 $logged_in_menu .= '</li>' ;

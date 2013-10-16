@@ -2,14 +2,6 @@
 
 class Sign_in extends CI_Controller {
 
-
-//	function __construct()
-//	{
-//		parent::__construct();
-//		$this->load->helper(array('form', 'url', 'file'));
-//	}
-
-
 	// Sign in form page
 	public function index() {
 		$this->load->helper('form');
@@ -18,7 +10,6 @@ class Sign_in extends CI_Controller {
 		$this->load->view('view_sign_in', $data) ;
 		$this->load->view('view_footer') ;
 	}
-
 
 	// Sign in form validation
 	public function sign_in_validation() {
@@ -272,16 +263,3 @@ class Sign_in extends CI_Controller {
 	}
 
 }  // Close class Sign_in
-
-
-
-
-
-
-
-
-
-
-
-
-

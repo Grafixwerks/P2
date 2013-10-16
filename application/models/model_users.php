@@ -5,12 +5,11 @@ class Model_users extends CI_Model {
 		
 		$this->db->where('email' , $this->input->post('email')) ;
 		$pw = $this->input->post('password') ;
+		// add salt
 		$pw = md5($pw) ;
 		$pw .= 'MoD52R6038j6mD' ;
 		$pw = md5($pw) ;
 		$this->db->where('pw' , $pw) ;
-		// old, only md5
-		//$this->db->where('pw' , md5($this->input->post('password'))) ;
 		$query = $this->db->get('users') ;
 		
 		if ( $query->num_rows() == 1 ) {
@@ -35,8 +34,8 @@ class Model_users extends CI_Model {
 	}
 
 	public function add_temp_user($confirm_code) {
-		// add salt
 		$pw = $this->input->post('password') ;
+		// add salt
 		$pw = md5($pw) ;
 		$pw .= 'MoD52R6038j6mD' ;
 		$pw = md5($pw) ;	
@@ -146,13 +145,6 @@ class Model_users extends CI_Model {
 		}
 	}
 
-//	function get_user($user_id) {
-//		
-//		$query = $this->db->get_where('users', array('user_id' => $user_id) );
-//		return $query->result();
-//		}
-
-
 	function get_user($user_id) {
 		$this->db->from('users');
 		$this->db->where('users.user_id', $user_id); 
@@ -161,17 +153,11 @@ class Model_users extends CI_Model {
 		return $query->result();
 		}
 
-
-
 	function get_all_user() {
 		$this->db->from('users');
-//		$this->db->where('users.user_id', $user_id); 
-//		$this->db->join('tweets', 'tweets.user_id = users.user_id');
 		$query =  $this->db->get() ;
 		return $query->result();
 		}
-
-
 
 	function get_dashboard() {
 		$user_id = $this->session->userdata('user_id') ;
@@ -182,7 +168,5 @@ class Model_users extends CI_Model {
 		$query =  $this->db->get() ;
 		return $query->result();
 		}
-
-
 
 } // close class Model_users

@@ -37,7 +37,4 @@ class Site extends CI_Controller {
 		$this->load->view('view_footer', $data) ;
 	}
 
-	// moved to controller_tweet
-	// tweet form validation
-
 } ////////////////////////////

@@ -1,5 +1,7 @@
 <?php
 // logged in user account dashboard
+// $route['dashboard'] = "profile/dashboard" ; 
+
 
 //	echo '<pre>' ;
 //	print_r($results_following) ;
@@ -111,7 +113,7 @@ $attributes = array('id' => 'send-tweet');
 
       <div class="tweet">
   
-          <img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+          <img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
   
           <div class="tweet-left">
               <h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
@@ -147,7 +149,7 @@ $attributes = array('id' => 'send-tweet');
     
         <div class="tweet">
     
-            <img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+            <img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
     
             <div class="tweet-left">
                 <h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>

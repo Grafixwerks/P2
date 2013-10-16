@@ -57,7 +57,7 @@ class Profile extends CI_Controller {
 		$data['results_tweet'] = $this->model_users->get_dashboard() ;
 		$user_id = $this->session->userdata('user_id') ;
 		// get users followed by logged in user
-		$data['results_following'] = $this->model_followers->get_following() ;
+		$data['results_following'] = $this->model_followers->get_following_dash() ;
 		
 		
 		$data['results_follower'] = $this->model_followers->get_follower() ;

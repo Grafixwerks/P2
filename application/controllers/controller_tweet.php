@@ -62,7 +62,7 @@ class Controller_tweet extends CI_Controller {
 			$this->load->model('model_tweets');
 			
 			if ($this->model_tweets->edit_tweet() ) {
-				redirect(dashboard) ;
+				redirect('dashboard') ;
 			} else redirect(error) ;	
 			
 			

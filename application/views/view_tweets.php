@@ -1,7 +1,7 @@
 <?php 
-// shows recent tweets on home page, list of users
-// $route['default_controller'] = "site";
-// public function index()
+// home page, shows recent tweets and list of users
+// Route: default_controller = site
+// 
 ?>
 <div class="main-content">
 
@@ -9,7 +9,7 @@
 //	echo '<pre>' ;
 //	print_r($results) ;
 //	print_r($this->session->all_userdata()) ;
-//	print_r($user_info) ;
+//	print_r($followed) ;
 //	print_r($user_follows) ;
 //	echo '<br />' ;	
 //print_r($haystack) ;	

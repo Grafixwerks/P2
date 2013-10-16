@@ -10,10 +10,13 @@ class Site extends CI_Controller {
 		$this->load->model('model_tweets');
 		$this->load->model('model_users');
 		$this->load->model('model_followers');
+		// results = list of tweets
 		$data['results'] = $this->model_tweets->get_tweets() ;
+		// all_users = list of users
 		$data['all_users'] = $this->model_users->get_all_user() ;
 		$user_id = $this->session->userdata('user_id') ;
-		$data['followed'] = $this->model_followers->get_following($user_id) ;
+		// list of tweets by people who logged in user is following
+		$data['followed'] = $this->model_followers->get_following() ;
 		$data['title'] = 'Home' ;
 		$this->load->view('view_header', $data) ;
 		// check if user logged in show tweet form or sign in

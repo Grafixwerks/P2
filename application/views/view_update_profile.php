@@ -70,7 +70,7 @@ $attributes = array('class' => 'success', 'id' => 'success');
 
 
 
-<?php echo form_open_multipart('sign_in/update_user_validation', $attributes) ; ?>
+<?php echo form_open_multipart('user_controller/update_user_validation', $attributes) ; ?>
    
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 

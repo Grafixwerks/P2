@@ -6,7 +6,7 @@
 <p class="intro">Join today and send God your message.</p>
 
 
-<?php echo form_open('sign_in/join_validation') ; ?>
+<?php echo form_open('user_controller/join_validation') ; ?>
   <fieldset>
     <legend>Join</legend>
    
@@ -44,7 +44,7 @@
 
   <input type="submit" name="submit" value="Join" id="join" class="btn" /> 
   </fieldset>
-<p>Already a member?  <a href="<?php echo site_url(); ?>sign_in">Sign in</a></p>
+<p>Already a member?  <a href="<?php echo site_url(); ?>sign-in">Sign in</a></p>
 
 <?php echo form_close() ; ?>
 

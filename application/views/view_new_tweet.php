@@ -14,7 +14,7 @@ $attributes = array('id' => 'send-tweet');
 ?>
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 
-<?php echo form_open('controller_tweet/tweet_validation', $attributes) ; ?>
+<?php echo form_open('tweet_controller/tweet_validation', $attributes) ; ?>
       <fieldset>
         <legend>Now let us upload the holy tweet of the Lord.</legend>
         <label for="tweet-msg" class="tweet-label">Message:</label>

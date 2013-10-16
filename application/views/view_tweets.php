@@ -1,6 +1,6 @@
 <?php 
 // home page, shows recent tweets and list of users
-// Route: default_controller = site
+// Route: default_controller = site_controller
 // 
 ?>
 <div class="main-content">

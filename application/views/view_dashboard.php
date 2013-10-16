@@ -49,7 +49,7 @@ $attributes = array('id' => 'send-tweet');
 
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>
 
-<?php echo form_open('controller_tweet/tweet_validation', $attributes) ; ?>
+<?php echo form_open('tweet_controller/tweet_validation', $attributes) ; ?>
       <fieldset>
           <label for="tweet-msg" class="tweet-label">Message:</label>
           

@@ -6,7 +6,7 @@
 <p class="intro">Holy Tweet sign in.</p>
  
 
-<?php echo form_open('sign_in/sign_in_validation') ; ?>
+<?php echo form_open('user_controller/sign_in_validation') ; ?>
 
   <fieldset>
     <legend>Sign in</legend>

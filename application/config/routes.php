@@ -38,28 +38,28 @@
 |
 */
 
-$route['default_controller'] = "site";
+$route['default_controller'] = "site_controller";
 $route['404_override'] = '';
 
-$route['profile'] = "profile"; // logged in user profile
-$route['update-profile'] = "sign_in/update_profile"; // edit logged in user profile
-$route['dashboard'] = "profile/dashboard" ; // logged in user dashboard for site
-$route['following'] = "profile/list_following" ; // list of people logged in user is following
-$route['users'] = "profile/list_users" ; // list all users
-$route['user/(:any)'] = "profile/user/$1"; // show profile of user by user_id
-$route['sign-in'] = "sign_in"; // user sign in
-$route['log-out'] = "sign_in/sign_out"; // log out current user, redirect to HTTP referrer
-$route['join'] = "sign_in/join"; // Form to join
-$route['join-success'] = "sign_in/join_success"; // confirmation of form submission 
-$route['confirm/(:any)'] = "sign_in/register_user/$1"; // confirm email code, send to 2nd form
-$route['delete-tweet/(:any)'] = "controller_tweet/delete/$1"; // deletes tweet by tweet_id
-$route['edit-tweet/(:any)'] = "controller_tweet/edit/$1"; // edit tweet by tweet_id
-$route['follow/(:any)'] = "controller_follow/add/$1"; // logged in user adds person to follow
-$route['unfollow/(:any)'] = "controller_follow/delete/$1"; // logged in user deletes person follow
-$route['error'] = "site/error"; // generic error
+$route['profile'] = "profile_controller"; // logged in user profile
+$route['update-profile'] = "user_controller/update_profile"; // edit logged in user profile
+$route['dashboard'] = "profile_controller/dashboard" ; // logged in user dashboard for site
+$route['following'] = "profile_controller/list_following" ; // list of people logged in user is following
+$route['users'] = "profile_controller/list_users" ; // list all users
+$route['user/(:any)'] = "profile_controller/user/$1"; // show profile of user by user_id
+$route['sign-in'] = "user_controller"; // user sign in
+$route['log-out'] = "user_controller/sign_out"; // log out current user, redirect to HTTP referrer
+$route['join'] = "user_controller/join"; // Form to join
+$route['join-success'] = "user_controller/join_success"; // confirmation of form submission 
+$route['confirm/(:any)'] = "user_controller/register_user/$1"; // confirm email code, send to 2nd form
+$route['delete-tweet/(:any)'] = "tweet_controller/delete/$1"; // deletes tweet by tweet_id
+$route['edit-tweet/(:any)'] = "tweet_controller/edit/$1"; // edit tweet by tweet_id
+$route['follow/(:any)'] = "follow_controller/add/$1"; // logged in user adds person to follow
+$route['unfollow/(:any)'] = "follow_controller/delete/$1"; // logged in user deletes person follow
+$route['error'] = "site_controller/error"; // generic error
 $route['upload'] = "upload"; // generic error
 
-//$route['test'] = "sign_in/confirm_registration";
+//$route['test'] = "user_controller/confirm_registration";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

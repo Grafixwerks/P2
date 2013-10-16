@@ -15,7 +15,7 @@ $attributes = array('id' => 'send-tweet');
 ?>
 <?php echo validation_errors('<div class="error">', '</div>') ; ?>   
 
-<?php echo form_open('controller_tweet/edit_tweet', $attributes) ; ?>
+<?php echo form_open('tweet_controller/edit_tweet', $attributes) ; ?>
       <fieldset>
         <legend>Edit tweet.</legend>
         

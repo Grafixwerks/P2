@@ -7,15 +7,16 @@
 
 	<div class="tweet">
 
-		<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
+		<img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
 			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
-			<p><?php echo $user->bio ?></p>
+			<p><?php echo $user->tweet ?></p>
 		</div><!-- .tweet-left -->
 
 		<div class="tweet-right">
-			<a href="<?php echo site_url(); ?>unfollow/<?php echo $user->user_id ; ?>" class="btn-small follow">unfollow</a> 
+			<span class="date"><?php echo date( "F j, Y", strtotime( $user->date ) ) ; ?></span>
+            <a href="<?php echo site_url(); ?>unfollow/<?php echo $user->user_id ; ?>" class="btn-small follow">unfollow</a> 
 		</div><!-- .tweet-right --> 
 
 		<br class="clr-flt">

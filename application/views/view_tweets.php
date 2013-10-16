@@ -51,11 +51,11 @@ foreach ($results as $tweet): ?>
 
 		<div class="tweet-left">
 			<h3><a href="/user/<?php echo $tweet->user_id ; ?>"><?php echo $tweet->f_name ; ?> <?php echo $tweet->l_name ; ?></a> </h3>
-			<p><?php echo $tweet->tweet // $tweet['tweet'] ?></p>
+			<p><?php echo $tweet->tweet ?></p>
 		</div><!-- .tweet-left -->
 
 		<div class="tweet-right">
-			<span class="date"><?php echo date( "F j, Y", strtotime( $tweet->date ) ) ; // $tweet['date'] ?></span>
+			<span class="date"><?php echo date( "F j, Y", strtotime( $tweet->date ) ) ; ?></span>
 <?php 			
 // check if user is logged in then show follow/unfollow link
 if ($this->session->userdata('is_logged_in')) {

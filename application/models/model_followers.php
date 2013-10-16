@@ -66,14 +66,28 @@ class Model_followers extends CI_Model {
 
 
 	// get user following
+//	function get_following() {
+//		$user_id = $this->session->userdata('user_id') ;
+//		$this->db->from('followers');
+//		$this->db->where('followers.follower', $user_id);
+//		$this->db->join('users', 'users.user_id = followers.following');
+//		$query =  $this->db->get() ;
+//		return $query->result();
+//	}
+
+
+	// get tweets from people logged in user is following
 	function get_following() {
 		$user_id = $this->session->userdata('user_id') ;
 		$this->db->from('followers');
 		$this->db->where('followers.follower', $user_id);
+		$this->db->join('tweets', 'followers.following = tweets.user_id');
 		$this->db->join('users', 'users.user_id = followers.following');
+		
 		$query =  $this->db->get() ;
 		return $query->result();
 	}
+
 
 
 	// get user following
@@ -87,13 +101,3 @@ class Model_followers extends CI_Model {
 	}
 
 } ///////////////////////
-
-
-
-
-
-
-
-
-
-

@@ -52,9 +52,7 @@ $db['default']['hostname'] = '127.0.0.1';
 $db['default']['username'] = 'sandbox';
 $db['default']['password'] = 'sandbox';
 $db['default']['database'] = 'sandbox';
-//$db['default']['username'] = 'uxhubbiz_andy';
-//$db['default']['password'] = '17rtMKmSI]}3Yyd7gI[fo1c-T)Q896';
-//$db['default']['database'] = 'uxhubbiz_hes';
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

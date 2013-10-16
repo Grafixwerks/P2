@@ -255,11 +255,9 @@ class User_controller extends CI_Controller {
 
 	// Update profile page
 	public function update_profile() {
-
 if ( ($this->session->userdata('is_logged_in')) == NULL ) {
 	redirect('/') ;
 }
-
 		$this->load->helper('form');
 		$data['title'] = 'Update Profile' ;
 		$this->load->view('header_view', $data) ;

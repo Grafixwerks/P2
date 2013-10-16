@@ -5,6 +5,9 @@ class Tweet_controller extends CI_Controller {
 	// Delete a tweet
 	public function delete($tweet_id)
 	{
+		if ( ($this->session->userdata('is_logged_in')) == NULL ) {
+			redirect('/') ;
+		}
 		$this->load->model('tweets_model');
 		$this->tweets_model->delete_tweet($tweet_id) ;
 		redirect('dashboard') ;
@@ -13,6 +16,9 @@ class Tweet_controller extends CI_Controller {
 	// Edit a tweet
 	public function edit($tweet_id)
 	{
+		if ( ($this->session->userdata('is_logged_in')) == NULL ) {
+			redirect('/') ;
+		}
 		$this->load->model('tweets_model');
 		$this->load->helper('form');
 		$data['results'] = $this->tweets_model->get_tweet($tweet_id) ;
@@ -46,8 +52,6 @@ class Tweet_controller extends CI_Controller {
 			}
 	}
 
-
-
 	// Edit tweet 
 	public function edit_tweet() {
 		$this->load->library('form_validation') ;
@@ -58,26 +62,17 @@ class Tweet_controller extends CI_Controller {
 			
 			if ($this->tweets_model->edit_tweet() ) {
 				redirect('dashboard') ;
-			} else redirect(error) ;	
-			
-			
-			
+			} else redirect('error') ;	
 		} else {
-//			echo 'fail' ;
-//			return false ;
-		$this->load->helper('form');
-		$this->load->model('tweets_model');
-		$data['results'] = $this->tweets_model->get_tweets() ;
-		$data['title'] = 'Home' ;
-		$this->load->view('header_view', $data) ;
+			//redirect('error') ;
+			$this->load->helper('form');
+			$this->load->model('tweets_model');
+			$data['results'] = $this->tweets_model->get_tweets() ;
+			$data['title'] = 'Home' ;
+			$this->load->view('header_view', $data) ;
 		
-		
-		$this->load->view('footer_view', $data) ;
+			$this->load->view('footer_view', $data) ;
 			}
 	}
-
-
-
-
 
 } //////////////////////

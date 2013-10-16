@@ -1,6 +1,6 @@
 <?php
 // logged in user account dashboard
-// $route['dashboard'] = "profile/dashboard" ; 
+// route dashboard = profile/dashboard 
 
 
 //	echo '<pre>' ;
@@ -160,14 +160,14 @@ $attributes = array('id' => 'send-tweet');
     
             <div class="tweet-right">
 
-<?php 
-		  if (in_array( $user->user_id , $user_follows ) ) {
-			  echo "<a href=\"unfollow/{$user->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
-		  } else {
-			  echo "<a href=\"follow/{$user->user_id}\" class=\"btn-small follow\">follow</a>" ;
-		  }
-
- ?>
+			<?php 
+            if (in_array( $user->user_id , $user_follows ) ) {
+                echo "<a href=\"unfollow/{$user->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
+            } else {
+                echo "<a href=\"follow/{$user->user_id}\" class=\"btn-small follow\">follow</a>" ;
+            }
+  
+           ?>
             </div><!-- .tweet-right --> 
     
             <br class="clr-flt">

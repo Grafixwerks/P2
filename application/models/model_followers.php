@@ -55,15 +55,12 @@ class Model_followers extends CI_Model {
 		return $query->result();
 	}
 
-
 //	function get_follower($user_id) {
 //		$this->db->from('followers');
 //		$this->db->where('followers.follower', $user_id);
 //		$query =  $this->db->get() ;
 //		return $query->result();
 //	}
-
-
 
 	// get user following for account dashboard
 	function get_following_dash() {
@@ -74,37 +71,23 @@ class Model_followers extends CI_Model {
 		$query =  $this->db->get() ;
 		return $query->result();
 	}
-
-
 	// get tweets from people logged in user is following
 	function get_following() {
 		$user_id = $this->session->userdata('user_id') ;
-//		$this->db->from('followers');
-//		$this->db->where('followers.follower', $user_id);
-//		$this->db->join('users', 'users.user_id = followers.following');
-		//$this->db->join('tweets', 'users.user_id = tweets.user_id');
-
-
-$this->db->select('*');
-$this->db->from('followers');
-$this->db->join('users', 'users.user_id = followers.following');
-$this->db->join('tweets', 'tweets.user_id = followers.following');
-$this->db->where('followers.follower', $user_id);
-//$q = $this->db->get();
-		
-		
+		$this->db->select('*');
+		$this->db->from('followers');
+		$this->db->join('users', 'users.user_id = followers.following');
+		$this->db->join('tweets', 'tweets.user_id = followers.following');
+		$this->db->where('followers.follower', $user_id);
 		$query =  $this->db->get() ;
 		return $query->result();
 	}
-
-
 
 	// get user following
 	function get_followz() {
 		$user_id = $this->session->userdata('user_id') ;
 		$this->db->from('followers');
 		$this->db->where('followers.follower', $user_id);
-		//$this->db->join('users', 'users.user_id = followers.following');
 		$query =  $this->db->get() ;
 		return $query->result();
 	}

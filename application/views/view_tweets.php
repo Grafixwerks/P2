@@ -20,11 +20,8 @@ $you_follow = '' ;
 
 // link for tab to show list of people logged in user follows
 if ($this->session->userdata('is_logged_in')) {	
-$you_follow = '<li><a href="' ;
-$you_follow .= site_url() ;
-$you_follow .= 'following"  class="tabz following-tab">People you follow</a></li>' ;
-
-// create an array of user_id that logged in user is following to toggle follow/unfollow links
+	$you_follow = '<li><a href="' . site_url() . 'following"  class="tabz following-tab">People you follow</a></li>' ;
+	// create an array of user_id that logged in user is following to toggle follow/unfollow links
 	foreach($user_follows as $following) {
 		$haystack[] = $following->following ;
 	}
@@ -56,20 +53,20 @@ foreach ($results as $tweet): ?>
 
 		<div class="tweet-right">
 			<span class="date"><?php echo date( "F j, Y", strtotime( $tweet->date ) ) ; ?></span>
-<?php 			
-// check if user is logged in then show follow/unfollow link
-if ($this->session->userdata('is_logged_in')) {
-	// check if tweet by logged in user
-   if ( $this->session->userdata('user_id') != $tweet->user_id ) {
-		  // check user_id if in array of followed users
-		  if (in_array( $tweet->user_id , $haystack ) ) {
-			  echo "<a href=\"unfollow/{$tweet->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
-		  } else {
-			  echo "<a href=\"follow/{$tweet->user_id}\" class=\"btn-small follow\">follow</a>" ;
-		  }
-	}
-}
-?>
+		<?php 			
+        // check if user is logged in then show follow/unfollow link
+        if ($this->session->userdata('is_logged_in')) {
+            // check if tweet by logged in user
+           if ( $this->session->userdata('user_id') != $tweet->user_id ) {
+                  // check user_id if in array of followed users
+                  if (in_array( $tweet->user_id , $haystack ) ) {
+                      echo "<a href=\"unfollow/{$tweet->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
+                  } else {
+                      echo "<a href=\"follow/{$tweet->user_id}\" class=\"btn-small follow\">follow</a>" ;
+                  }
+            }
+        }
+        ?>
    
 		</div><!-- .tweet-right --> 
 
@@ -109,23 +106,20 @@ if ($this->session->userdata('is_logged_in')) {
 			<p><?php echo $user->bio ?></p>
 		</div><!-- .tweet-left -->
 
-
-
-<?php 
-// check if user logged in
-if ($this->session->userdata('is_logged_in')) {
-	// check if logged in user
-   if ( $this->session->userdata('user_id') != $user->user_id ) {
-		  // check user_id if in array of followed users
-		  if (in_array( $user->user_id , $haystack ) ) {
-			  echo "<a href=\"unfollow/{$user->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
-		  } else {
-			  echo "<a href=\"follow/{$user->user_id}\" class=\"btn-small follow\">follow</a>" ;
-		  }
-	}
-}
- ?>
-
+		<?php 
+        // check if user logged in
+        if ($this->session->userdata('is_logged_in')) {
+            // check if logged in user
+           if ( $this->session->userdata('user_id') != $user->user_id ) {
+                  // check user_id if in array of followed users
+                  if (in_array( $user->user_id , $haystack ) ) {
+                      echo "<a href=\"unfollow/{$user->user_id}\" class=\"btn-small follow\">unfollow</a>" ;
+                  } else {
+                      echo "<a href=\"follow/{$user->user_id}\" class=\"btn-small follow\">follow</a>" ;
+                  }
+            }
+        }
+         ?>
 
 		<br class="clr-flt">
 
@@ -137,4 +131,4 @@ if ($this->session->userdata('is_logged_in')) {
 
 </div><!-- .main-content -->
 
-<img src="<?php echo site_url(); ?>images/angel.png" width="376" height="219" class="angel" alt="Andrew Pearson" />
+<img src="<?php echo site_url(); ?>images/angel.png" width="376" height="219" class="angel" alt="Andy Pearson CSCI E-15 P2" />

@@ -4,13 +4,10 @@ class Profile extends CI_Controller {
 	// Logged in user profile page
 	public function index()
 	{
-		///  check if logged in 
+		//  check if logged in 
 		if ( ($this->session->userdata('is_logged_in') == NULL) ) {
 			redirect(site) ;
 		}
-		//$this->load->model('model_users');
-		//$user_id = $this->session->userdata('user_id') ;
-		//$data['results'] = $this->model_users->get_user($user_id) ;
 		$data['title'] = $this->session->userdata('f_name') ;
 		$data['title'] .= ' ' ;
 		$data['title'] .= $this->session->userdata('l_name') ;
@@ -32,9 +29,7 @@ class Profile extends CI_Controller {
 			} else {
 				$data['is_following'] = FALSE ;
 			}
-			//$data['test'] = 'Hello Sexy!' ;
 		} else { 
-			//$data['test'] = 'Boo' ;
 			$data['is_following'] = FALSE ;
 		}
 		$data['results'] = $this->model_users->get_user($user_id) ;
@@ -58,18 +53,12 @@ class Profile extends CI_Controller {
 		$user_id = $this->session->userdata('user_id') ;
 		// get users followed by logged in user
 		$data['results_following'] = $this->model_followers->get_following_dash() ;
-		
-		
 		$data['results_follower'] = $this->model_followers->get_follower() ;
-
-
-		
 		$data['title'] = "User Profile" ;
 		$this->load->view('view_header', $data) ;
 		$this->load->view('view_dashboard', $data) ;
 		$this->load->view('view_footer') ;
 	}
-
 
 	// List all Users page
 	public function list_users()
@@ -109,7 +98,5 @@ class Profile extends CI_Controller {
 		$this->load->view('view_list_following', $data) ;
 		$this->load->view('view_footer') ;
 	}
-
-
 
 } /////////////////////

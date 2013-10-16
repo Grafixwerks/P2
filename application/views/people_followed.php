@@ -23,8 +23,6 @@
 
 	</div><!-- .tweet -->
 
-<?php endforeach 
-
- ?> 
+<?php endforeach ?> 
 
 </div><!-- .tab-content -->

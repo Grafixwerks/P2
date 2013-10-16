@@ -6,9 +6,9 @@ class User_controller extends CI_Controller {
 	public function index() {
 		$this->load->helper('form');
 		$data['title'] = 'Sign in' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_sign_in', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('sign_in_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// Sign in form validation
@@ -21,9 +21,9 @@ class User_controller extends CI_Controller {
 			redirect('site_controller') ;
 		} else {
 			$data['title'] = 'Sign in' ;
-			$this->load->view('view_header', $data) ;
-			$this->load->view('view_sign_in', $data) ;
-			$this->load->view('view_footer') ;
+			$this->load->view('header_view', $data) ;
+			$this->load->view('sign_in_view', $data) ;
+			$this->load->view('footer_view') ;
 			}
 	}
 
@@ -50,9 +50,9 @@ class User_controller extends CI_Controller {
 	public function join() {
 		$this->load->helper('form');
 		$data['title'] = 'Join' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_join', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('join_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// join form validation, add to users, send email with confirmation code
@@ -92,18 +92,18 @@ class User_controller extends CI_Controller {
 			redirect('join-success') ;
 		} else {
 			$data['title'] = 'Join' ;
-			$this->load->view('view_header', $data) ;
-			$this->load->view('view_join', $data) ;
-			$this->load->view('view_footer') ;
+			$this->load->view('header_view', $data) ;
+			$this->load->view('join_view', $data) ;
+			$this->load->view('footer_view') ;
 			}
 	}
 
 	// Join success page, Join form successfully submitted, user in temp_users
 	public function join_success() {
 		$data['title'] = 'Join Success' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_join_success', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('join_success_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// Check confirm_code from email against temp_users, add to users, send to user to 2nd form
@@ -134,9 +134,9 @@ class User_controller extends CI_Controller {
 	public function confirm_registration() {
 		$this->load->helper('form');
 		$data['title'] = 'Registration confirmed' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_confirm_registration', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('confirm_registration_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// Validate data from confirmation code success page form and insert into users table
@@ -188,9 +188,9 @@ class User_controller extends CI_Controller {
 		} else {
 			$this->load->helper('form');
 			$data['title'] = 'Registration confirmed' ;
-			$this->load->view('view_header', $data) ;
-			$this->load->view('view_confirm_registration', $data) ;
-			$this->load->view('view_footer') ;
+			$this->load->view('header_view', $data) ;
+			$this->load->view('confirm_registration_view', $data) ;
+			$this->load->view('footer_view') ;
 			}
 	}
 
@@ -247,19 +247,24 @@ class User_controller extends CI_Controller {
 		} else {
 			$this->load->helper('form');
 			$data['title'] = 'Registration confirmed' ;
-			$this->load->view('view_header', $data) ;
-			$this->load->view('view_confirm_registration', $data) ;
-			$this->load->view('view_footer') ;
+			$this->load->view('header_view', $data) ;
+			$this->load->view('confirm_registration_view', $data) ;
+			$this->load->view('footer_view') ;
 			}
 	}
 
 	// Update profile page
 	public function update_profile() {
+
+if ( ($this->session->userdata('is_logged_in')) == NULL ) {
+	redirect('/') ;
+}
+
 		$this->load->helper('form');
 		$data['title'] = 'Update Profile' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_update_profile', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('update_profile_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 }  // Close class user_controller

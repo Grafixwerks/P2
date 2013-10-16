@@ -17,9 +17,9 @@ class Tweet_controller extends CI_Controller {
 		$this->load->helper('form');
 		$data['results'] = $this->tweets_model->get_tweet($tweet_id) ;
 		$data['title'] = "Edit Tweet" ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_edit_tweet', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('edit_tweet_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// Add new tweet 
@@ -39,10 +39,10 @@ class Tweet_controller extends CI_Controller {
 		$this->load->model('tweets_model');
 		$data['results'] = $this->tweets_model->get_tweets() ;
 		$data['title'] = 'Home' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_new_tweet' ) ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('new_tweet_view' ) ;
 		$this->load->view('view_tweets', $data) ;
-		$this->load->view('view_footer', $data) ;
+		$this->load->view('footer_view', $data) ;
 			}
 	}
 
@@ -69,10 +69,10 @@ class Tweet_controller extends CI_Controller {
 		$this->load->model('tweets_model');
 		$data['results'] = $this->tweets_model->get_tweets() ;
 		$data['title'] = 'Home' ;
-		$this->load->view('view_header', $data) ;
+		$this->load->view('header_view', $data) ;
 		
 		
-		$this->load->view('view_footer', $data) ;
+		$this->load->view('footer_view', $data) ;
 			}
 	}
 

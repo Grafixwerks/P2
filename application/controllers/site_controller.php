@@ -18,26 +18,26 @@ class Site_controller extends CI_Controller {
 		// list of tweets by people who logged in user is following
 		$data['followed'] = $this->followers_model->get_following() ;
 		$data['title'] = 'Home' ;
-		$this->load->view('view_header', $data) ;
+		$this->load->view('header_view', $data) ;
 		// check if user logged in show tweet form or sign in
 		if ($this->session->userdata('is_logged_in')) {
-			$this->load->view('view_new_tweet' ) ;
+			$this->load->view('new_tweet_view' ) ;
 			// grab followers put in array 
 			$user_follows = array() ;
 			$data['user_follows'] = $this->followers_model->get_followz() ;
 		} else {
-			$this->load->view('view_join_link' ) ;;
+			$this->load->view('join_link_view' ) ;;
 		}
-		$this->load->view('view_tweets', $data) ;
-		$this->load->view('view_footer', $data) ;
+		$this->load->view('home_view', $data) ;
+		$this->load->view('footer_view', $data) ;
 	}
 	// generic error page
 	public function error()
 	{
 		$data['title'] = 'Error' ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_error', $data) ;
-		$this->load->view('view_footer', $data) ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('error_view', $data) ;
+		$this->load->view('footer_view', $data) ;
 	}
 
 } ////////////////////////////

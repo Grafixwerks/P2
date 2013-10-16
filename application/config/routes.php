@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "site_controller";
+$route['default_controller'] = "site_controller"; // home page - home_view
 $route['404_override'] = '';
 
 $route['profile'] = "profile_controller"; // logged in user profile
@@ -57,9 +57,8 @@ $route['edit-tweet/(:any)'] = "tweet_controller/edit/$1"; // edit tweet by tweet
 $route['follow/(:any)'] = "follow_controller/add/$1"; // logged in user adds person to follow
 $route['unfollow/(:any)'] = "follow_controller/delete/$1"; // logged in user deletes person follow
 $route['error'] = "site_controller/error"; // generic error
-$route['upload'] = "upload"; // generic error
+//$route['upload'] = "upload"; // generic error
 
-//$route['test'] = "user_controller/confirm_registration";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

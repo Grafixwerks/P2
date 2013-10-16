@@ -11,9 +11,9 @@ class Profile_controller extends CI_Controller {
 		$data['title'] = $this->session->userdata('f_name') ;
 		$data['title'] .= ' ' ;
 		$data['title'] .= $this->session->userdata('l_name') ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_profile', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('profile_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// User profile page
@@ -41,9 +41,9 @@ class Profile_controller extends CI_Controller {
 		
 		
 		$data['title'] = "User Profile" ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_user', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('user_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// User dashboard page
@@ -60,9 +60,9 @@ class Profile_controller extends CI_Controller {
 		$data['results_following'] = $this->followers_model->get_following_dash() ;
 		$data['results_follower'] = $this->followers_model->get_follower() ;
 		$data['title'] = "User Profile" ;
-		$this->load->view('view_header', $data) ;
-		$this->load->view('view_dashboard', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('dashboard_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// List all Users page
@@ -72,15 +72,15 @@ class Profile_controller extends CI_Controller {
 		$this->load->model('users_model');
 		$data['results'] = $this->users_model->get_all_user() ;
 		$data['title'] = "List Users" ;
-		$this->load->view('view_header', $data) ;
+		$this->load->view('header_view', $data) ;
 		// check if user logged in show tweet form or sign in
 		if ($this->session->userdata('is_logged_in')) {
-			$this->load->view('view_new_tweet' ) ;
+			$this->load->view('new_tweet_view' ) ;
 		} else {
-			$this->load->view('view_join_link' ) ;;
+			$this->load->view('join_link_view' ) ;;
 		}
-		$this->load->view('view_list_users', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('list_users_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 	// List of all people current user is following
@@ -93,15 +93,15 @@ class Profile_controller extends CI_Controller {
 		
 		$data['results'] = $this->followers_model->get_following($user_id) ;
 		$data['title'] = "List following" ;
-		$this->load->view('view_header', $data) ;
+		$this->load->view('header_view', $data) ;
 		// check if user logged in show tweet form or sign in
 		if ($this->session->userdata('is_logged_in')) {
-			$this->load->view('view_new_tweet' ) ;
+			$this->load->view('new_tweet_view' ) ;
 		} else {
-			$this->load->view('view_join_link' ) ;;
+			$this->load->view('join_link_view' ) ;;
 		}
-		$this->load->view('view_list_following', $data) ;
-		$this->load->view('view_footer') ;
+		$this->load->view('list_following_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 
 } /////////////////////

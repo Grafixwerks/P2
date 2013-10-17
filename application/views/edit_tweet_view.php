@@ -23,7 +23,7 @@ $attributes = array('id' => 'send-tweet');
         
         <label for="tweet-msg" class="tweet-label">Message:</label>
         
-        <textarea name="tweet"  class="tweet-txt" ><?php echo set_value('tweet') ; echo $results[0]->tweet ; ?></textarea>
+        <textarea name="tweet"  class="tweet-txt" ><?php echo set_value('tweet') ; echo html_escape( $results[0]->tweet ) ; ?></textarea>
         
         <input type="submit" name="submit" value="Update" id="btn-tweet" class="btn" />
       </fieldset>
@@ -31,4 +31,3 @@ $attributes = array('id' => 'send-tweet');
 <?php echo form_close() ; ?>
 
 </div><!-- .main-content -->
-

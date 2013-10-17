@@ -47,8 +47,12 @@ foreach ($results as $tweet): ?>
 		<img src="<?php echo site_url(); ?>images/user/<?php echo $tweet->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
-			<h3><a href="/user/<?php echo $tweet->user_id ; ?>"><?php echo $tweet->f_name ; ?> <?php echo $tweet->l_name ; ?></a> </h3>
-			<p><?php echo $tweet->tweet ?></p>
+			<h3>
+            <a href="/user/<?php echo $tweet->user_id ; ?>">
+			<?php echo html_escape($tweet->f_name) ; ?> <?php echo html_escape($tweet->l_name) ; ?>
+            </a> 
+            </h3>
+			<p><?php echo html_escape($tweet->tweet) ?></p>
 		</div><!-- .tweet-left -->
 
 		<div class="tweet-right">
@@ -97,13 +101,15 @@ if ($this->session->userdata('is_logged_in')) {
 // list users
  foreach ($all_users as $user): ?> 
 	<div class="tweet">
-
-		<!--<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">-->
         <img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
-			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
-			<p><?php echo $user->bio ?></p>
+			<h3>
+            <a href="<?php echo site_url(); ?>user/<?php echo $user->user_id ; ?>">
+			<?php echo html_escape($user->f_name) ; ?> <?php echo html_escape($user->l_name) ; ?>
+            </a>
+            </h3>
+			<p><?php echo html_escape($user->bio) ?></p>
 		</div><!-- .tweet-left -->
 
 		<?php 

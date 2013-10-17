@@ -59,7 +59,7 @@ $attributes = array('class' => 'success', 'id' => 'success');
 ?>
 <div class="main-content">
 
-    <h1>Hallelujah! Welcome to the fold <?php echo $f_name ; ?>.</h1>
+    <h1>Hallelujah! Welcome to the fold <?php echo html_escape($f_name) ; ?>.</h1>
     
     <p>Please take a minute to complete your profile so people know who you are. Or <a href="/">skip this</a> for now.</p>
 

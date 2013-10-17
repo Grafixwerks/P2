@@ -29,7 +29,7 @@ class Site_controller extends CI_Controller {
 			$this->load->view('join_link_view' ) ;;
 		}
 		$this->load->view('home_view', $data) ;
-		$this->load->view('footer_view', $data) ;
+		$this->load->view('footer_view') ;
 	}
 	// generic error page
 	public function error()
@@ -37,7 +37,16 @@ class Site_controller extends CI_Controller {
 		$data['title'] = 'Error' ;
 		$this->load->view('header_view', $data) ;
 		$this->load->view('error_view', $data) ;
-		$this->load->view('footer_view', $data) ;
+		$this->load->view('footer_view') ;
+	}
+
+	// 404 page
+	public function lost()
+	{
+		$data['title'] = 'OMG! Error 404' ;
+		$this->load->view('header_view', $data) ;
+		$this->load->view('404_view') ;
+		$this->load->view('footer_view') ;
 	}
 
 } ////////////////////////////

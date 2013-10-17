@@ -78,7 +78,8 @@ class Users_model extends CI_Model {
 				'f_name' => $row->f_name ,
 				'l_name' => $row->l_name ,
 				'email' => $row->email ,
-				'pw' => $row->pw 
+				'pw' => $row->pw ,
+				'pic' => 'unk-user.png' 
 			) ;
 			// insert temp_users data into users
 			$did_add_user = $this->db->insert('users' , $data) ;
@@ -104,6 +105,9 @@ class Users_model extends CI_Model {
 
 	// take data from 2nd form add to users
 	public function add_user_info($pic) {
+		if ( $pic == '' ) {
+			$pic = 'unk-user.png' ;
+		}
 		$user_id = $this->session->userdata('user_id') ;
 		$data = array (
 			'bio'		=> $this->input->post('bio') ,
@@ -125,16 +129,28 @@ class Users_model extends CI_Model {
 	// take data profile update form add to users
 	public function update_user($pic) {
 		$user_id = $this->session->userdata('user_id') ;
-		$data = array (
-			'f_name' 	=> $this->input->post('f_name') ,
-			'l_name' 	=> $this->input->post('l_name') ,
-			'email' 	=> $this->input->post('email') ,
-			'bio'		=> $this->input->post('bio') ,
-			'pic'		=> $pic ,
-			'city'		=> $this->input->post('city') ,
-			'state'		=> $this->input->post('state') ,
-			'website'	=> $this->input->post('website') 
-		) ;
+		if ( $pic == NULL ) {
+			$data = array (
+				'f_name' 	=> $this->input->post('f_name') ,
+				'l_name' 	=> $this->input->post('l_name') ,
+				'email' 	=> $this->input->post('email') ,
+				'bio'		=> $this->input->post('bio') ,
+				'city'		=> $this->input->post('city') ,
+				'state'		=> $this->input->post('state') ,
+				'website'	=> $this->input->post('website') 
+			) ;
+		} else {
+			$data = array (
+				'f_name' 	=> $this->input->post('f_name') ,
+				'l_name' 	=> $this->input->post('l_name') ,
+				'email' 	=> $this->input->post('email') ,
+				'bio'		=> $this->input->post('bio') ,
+				'pic' => $pic ,
+				'city'		=> $this->input->post('city') ,
+				'state'		=> $this->input->post('state') ,
+				'website'	=> $this->input->post('website') 
+			) ;	
+		}
 		$this->db->where('user_id' , $user_id ) ;
 		$query = $this->db->update('users' , $data) ;
 		if ($query) {

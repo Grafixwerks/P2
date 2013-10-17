@@ -205,7 +205,7 @@ class User_controller extends CI_Controller {
 		$this->form_validation->set_rules('website', 'Website', 'trim|xss_clean|prep_url|strip_tags|max_length[50]') ;
 		$this->form_validation->set_rules('bio', 'Bio', 'required|trim|xss_clean|strip_tags|max_length[1000]') ;
 		$this->form_validation->set_message('alpha', 'Please choose a state.' ) ;
-		$pic = 'unk-user.png' ;
+		//$pic = 'unk-user.png' ;
 		// Validate data 
 		if ($this->form_validation->run() == TRUE) {
 		// configure image upload
@@ -242,7 +242,7 @@ class User_controller extends CI_Controller {
 		}
 			// send form info to db
 			$this->load->model('users_model');
-			$this->users_model->update_user($pic) ;
+			//$this->users_model->update_user($pic) ;
 			redirect('/profile') ;
 		} else {
 			$this->load->helper('form');

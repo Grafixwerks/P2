@@ -10,8 +10,6 @@ $logged_in_menu .= '<li><a href="/log-out">Log out</a></li>' ;
 $logged_in_menu .= '</ul>' ;
 $logged_in_menu .= '</li>' ;
 
-
-
 // user sign in link
 $sign_in_link = '<li><a href="/sign-in" class="sign-in">Sign in</a></li>' ;
 
@@ -27,7 +25,7 @@ if ($this->session->userdata('is_logged_in')) {
 <head>
 <!-- CSCI E-15 | Andrew Pearson | P 2 -->
 <meta charset="utf-8">
-<title>Holy Tweet <?php echo $title ?></title>
+<title>Holy Tweet <?php echo html_escape( $title ) ?></title>
 <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="<?php echo site_url(); ?>css/main.css">
 </head>

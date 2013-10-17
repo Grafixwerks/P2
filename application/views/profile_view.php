@@ -17,9 +17,8 @@
   
   if ($this->session->userdata('pic') != NULL) {
 	  $pic = "{$this->session->userdata('pic')}" ;
-	  $alt = "{$this->session->userdata('f_name')} {$this->session->userdata('l_name')} profile picture" ;
-  } else { $pic = 'unk-user' ;
-	  $alt = "" ;
+  } else { 
+	  $pic = 'unk-user' ;
   } 
 ?>
 <div class="main-content">
@@ -28,7 +27,7 @@
   
   <div class="profile-left">
   
-      <img src="<?php echo site_url(); ?>images/user/<?php echo $pic ; ?>" width="130" height="130" alt="<?php echo $alt ; ?>" class="user-pic">
+      <img src="<?php echo site_url(); ?>images/user/<?php echo $pic ; ?>" width="130" height="130" alt="" class="user-pic">
       <p class="edit-profile"><a href="/update-profile" class="btn" id="edit-pro">edit your profile</a></p>
   
   </div><!-- .profile-left -->

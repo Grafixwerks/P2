@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "site_controller"; // home page - home_view
-$route['404_override'] = '';
+$route['404_override'] = 'site_controller/lost';
 
 $route['profile'] = "profile_controller"; // logged in user profile
 $route['update-profile'] = "user_controller/update_profile"; // edit logged in user profile

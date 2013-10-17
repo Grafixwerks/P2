@@ -34,8 +34,12 @@ $you_follow .= 'following" >People you follow</a></li>' ;
 		<img src="<?php echo site_url(); ?>images/th-unk-user.png" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
-			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
-			<p><?php echo $user->bio ?></p>
+			<h3>
+              <a href="/user/<?php echo $user->user_id ; ?>">
+              <?php echo html_escape($user->f_name) ; ?> <?php echo html_escape($user->l_name) ; ?>
+              </a>
+            </h3>
+			<p><?php echo html_escape($user->bio) ?></p>
 		</div><!-- .tweet-left -->
 
 

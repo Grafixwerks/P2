@@ -10,7 +10,11 @@
 		<img src="<?php echo site_url(); ?>images/user/<?php echo $user->pic ; ?>" width="48" height="48" alt="" class="user-th">
 
 		<div class="tweet-left">
-			<h3><a href="/user/<?php echo $user->user_id ; ?>"><?php echo $user->f_name ; ?> <?php echo $user->l_name ; ?></a> </h3>
+			<h3>
+                <a href="/user/<?php echo $user->user_id ; ?>">
+                <?php echo html_escape( $user->f_name ) ; ?> <?php echo html_escape( $user->l_name ) ; ?>
+                </a>
+            </h3>
 			<p><?php echo $user->tweet ?></p>
 		</div><!-- .tweet-left -->
 

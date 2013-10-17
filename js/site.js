@@ -24,6 +24,19 @@ $(document).ready(function() {
 			  if($(this).val() == '') $(this).removeClass('active').addClass('inactive');
 	  });
 
+
+	  // Confirm Password input instructions, remove on focus, uses background image
+	  $('#c_password').focus(function() {
+		  $(this).addClass('active');
+		  $(this).removeClass('inactive');
+	  });
+
+	  $('#c_password').blur(function() {
+			  if($(this).val() == '') $(this).removeClass('active').addClass('inactive');
+	  });
+
+
+
 // Tweet input instructions, remove on focus
 	  $('#tweet-msg').val('Create your tweet, 140 characters max.').css('color', '#808080');
 	  var text1 = 'Create your tweet, 140 characters max.';

@@ -487,11 +487,22 @@ fieldset {
 }
 #password.inactive {
 	color: #7F5B56;
-
 	background-image: url(../images/bg-password.png);
 	background-position: 0px 0px;
 	background-repeat: no-repeat;
 }
+#c_password.active {
+	color: #000;
+	background-image: none;
+}
+#c_password.inactive {
+	color: #7F5B56;
+	background-image: url(../images/bg-c-password.png);
+	background-position: 0px 0px;
+	background-repeat: no-repeat;
+}
+
+
 .hide {
 	display:none;
 }

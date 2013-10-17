@@ -107,7 +107,7 @@ if ( $this->session->userdata('is_logged_in') && ( $current_user != $results[0]-
 
   <div class="profile-left">
 
-      <img src="<?php echo site_url(); ?>images/user/<?php echo $pic ; ?>" width="130" height="129" alt="" class="user-pic">
+      <img src="<?php echo site_url(); ?>images/user/<?php echo $pic ; ?>" width="130" height="130" alt="" class="user-pic">
       <?php echo $link ; ?>
 
   </div><!-- .profile-left -->

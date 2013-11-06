@@ -6,17 +6,11 @@
 <div class="main-content">
 
 <?php
-//	echo '<pre>' ;
-//	print_r($results) ;
-//	print_r($this->session->all_userdata()) ;
-//	print_r($followed) ;
-//	print_r($user_follows) ;
-//	echo '<br />' ;	
-//print_r($haystack) ;	
-//	echo '</pre>' ;	
 	
 $haystack = array() ;
 $you_follow = '' ;
+$user_follows = '' ;
+
 
 // link for tab to show list of people logged in user follows
 if ($this->session->userdata('is_logged_in')) {	

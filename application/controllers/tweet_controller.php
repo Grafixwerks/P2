@@ -47,7 +47,7 @@ class Tweet_controller extends CI_Controller {
 		$data['title'] = 'Home' ;
 		$this->load->view('header_view', $data) ;
 		$this->load->view('new_tweet_view' ) ;
-		$this->load->view('view_tweets', $data) ;
+		$this->load->view('home_view', $data) ;
 		$this->load->view('footer_view', $data) ;
 			}
 	}

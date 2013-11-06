@@ -14,7 +14,7 @@
 
     <div class="text-group">
       <label for="f_name" class="welcome-label">First Name:</label>
-      <input type="text" name="f_name" value="<?php echo set_value('f_name'); ?>" id="f_name"  class="txt form-txt"title="first name" maxlength="30" />
+      <input type="text" name="f_name" value="<?php echo set_value('f_name'); ?>" id="f_name"  class="txt form-txt" title="first name" maxlength="30" />
     </div><!-- .text-group -->
     
     
